@@ -32,159 +32,158 @@ const CATEGORIES: { id: string; label: string; products: Product[] }[] = [
     id: "recent",
     label: "Recent Launches",
     products: [
-      { icon: Brain,       sub: "Enacle", name: "ERP",            desc: "ERP software built for businesses to run faster and smarter operations.",                    color: "#2563eb", href: "/products#erp" },
-      { icon: ShoppingCart,sub: "Enacle", name: "Procurement",    desc: "Complete source-to-pay platform to transform your procurement into a growth engine.",        color: "#dc2626", href: "/products#procurement" },
-      { icon: CreditCard,  sub: "Enacle", name: "Spend",          desc: "Manage and control every business spend from a single unified platform.",                    color: "#ea580c", href: "/products#spend" },
-      { icon: Workflow,    sub: "Enacle", name: "MCP",            desc: "Make apps agent-ready, build agentic workflows, and get work done with prompts.",            color: "#7c3aed", href: "/products#mcp" },
-      { icon: LayoutGrid,  sub: "Enacle", name: "POS",            desc: "Modern retail POS to sell better, manage your entire business, and join the digital revolution.", color: "#0891b2", href: "/products#pos" },
-      { icon: Globe,       sub: "Enacle", name: "Domains",        desc: "Easy domain registration, transfer, and secured DNS management.",                            color: "#16a34a", href: "/products#domains" },
-      { icon: CreditCard,  sub: "Enacle", name: "Payments",       desc: "Accept payments, manage subscriptions and build a reliable payment infrastructure.",         color: "#2563eb", href: "/products#payments" },
-      { icon: Brain,       sub: "Enacle", name: "ResearchStudio", desc: "AI-powered research platform to gather, analyze and act on customer insights.",              color: "#9333ea", href: "/products#researchstudio" },
-      { icon: Package,     sub: "Enacle", name: "Projects Plus",  desc: "Enterprise-grade project management with advanced resource and budget tracking.",            color: "#c2410c", href: "/products#projectsplus" },
+      { icon: Brain,       sub: "Zoho", name: "Zoho ERP",            desc: "ERP built for faster, smarter operations across finance, ops, and IT.",                   color: "#2563eb", href: "/products#erp" },
+      { icon: ShoppingCart,sub: "Zoho", name: "Zoho Procurement",    desc: "Complete source-to-pay platform that turns procurement into a growth lever.",             color: "#dc2626", href: "/products#procurement" },
+      { icon: CreditCard,  sub: "Zoho", name: "Zoho Spend",          desc: "Control every business spend from cards to expenses in one place.",                        color: "#ea580c", href: "/products#spend" },
+      { icon: Workflow,    sub: "Zoho", name: "Zoho MCP",            desc: "Make apps agent-ready and orchestrate agentic workflows with prompts.",                    color: "#7c3aed", href: "/products#mcp" },
+      { icon: LayoutGrid,  sub: "Zoho", name: "Zoho POS",            desc: "Modern retail POS to sell better, sync inventory, and delight customers.",                 color: "#0891b2", href: "/products#pos" },
+      { icon: Globe,       sub: "Zoho", name: "Zoho Domains",        desc: "Easy domain registration, transfers, and secure DNS management.",                          color: "#16a34a", href: "/products#domains" },
     ],
   },
   {
     id: "sales",
     label: "Sales",
     products: [
-      { icon: TrendingUp,  sub: "Enacle", name: "CRM",           desc: "AI-powered sales CRM to manage pipeline, leads and deals.",                                  color: "#dc2626", href: "/products#crm" },
-      { icon: Users,       sub: "Enacle", name: "Bigin",         desc: "Pipeline-centric CRM built for small businesses and teams.",                                  color: "#0891b2", href: "/products#bigin" },
-      { icon: BookOpen,    sub: "Enacle", name: "SalesIQ",       desc: "Live chat and visitor tracking to convert website visitors.",                                  color: "#16a34a", href: "/products#salesiq" },
-      { icon: DollarSign,  sub: "Enacle", name: "Subscriptions", desc: "Recurring billing platform for subscription-based businesses.",                               color: "#ea580c", href: "/products#subscriptions" },
-      { icon: FileText,    sub: "Enacle", name: "Sign",          desc: "eSignature solution to send, sign and manage documents online.",                              color: "#7c3aed", href: "/products#sign" },
-      { icon: Target,      sub: "Enacle", name: "Contracts",     desc: "End-to-end contract lifecycle management for legal and sales teams.",                         color: "#2563eb", href: "/products#contracts" },
+      { icon: TrendingUp,  sub: "Zoho", name: "Zoho CRM",           desc: "AI-powered CRM to manage pipeline, leads, and deals at scale.",                             color: "#dc2626", href: "/products#crm" },
+      { icon: Users,       sub: "Zoho", name: "Zoho Bigin",         desc: "Pipeline-centric CRM built for small teams that need speed.",                               color: "#0891b2", href: "/products#bigin" },
+      { icon: BookOpen,    sub: "Zoho", name: "Zoho SalesIQ",       desc: "Live chat and visitor intelligence to convert website traffic.",                            color: "#16a34a", href: "/products#salesiq" },
+      { icon: DollarSign,  sub: "Zoho", name: "Zoho Subscriptions", desc: "Recurring billing platform for subscription-first businesses.",                              color: "#ea580c", href: "/products#subscriptions" },
+      { icon: FileText,    sub: "Zoho", name: "Zoho Sign",          desc: "eSignature solution to send, sign, and manage documents online.",                           color: "#7c3aed", href: "/products#sign" },
+      { icon: Target,      sub: "Zoho", name: "Zoho Contracts",     desc: "Contract lifecycle management for legal and revenue teams.",                                color: "#2563eb", href: "/products#contracts" },
     ],
   },
   {
     id: "marketing",
     label: "Marketing",
     products: [
-      { icon: Megaphone,   sub: "Enacle", name: "Campaigns",     desc: "Email and SMS marketing campaigns with automation and analytics.",                            color: "#ea580c", href: "/products#campaigns" },
-      { icon: Globe,       sub: "Enacle", name: "Social",        desc: "Social media management and publishing across all major platforms.",                          color: "#2563eb", href: "/products#social" },
-      { icon: BarChart3,   sub: "Enacle", name: "Marketing Plus",desc: "Unified marketing platform to run multi-channel campaigns.",                                  color: "#9333ea", href: "/products#marketingplus" },
-      { icon: PieChart,    sub: "Enacle", name: "PageSense",     desc: "Conversion rate optimization and funnel analytics.",                                          color: "#0891b2", href: "/products#pagesense" },
-      { icon: Smartphone,  sub: "Enacle", name: "Backstage",     desc: "Event management platform for virtual, hybrid and in-person events.",                        color: "#16a34a", href: "/products#backstage" },
-      { icon: Brain,       sub: "Enacle", name: "LandingPage",   desc: "Drag-and-drop landing page builder with A/B testing.",                                        color: "#dc2626", href: "/products#landingpage" },
+      { icon: Megaphone,   sub: "Zoho", name: "Zoho Campaigns",     desc: "Email and SMS marketing with automation, AI copy, and analytics.",                         color: "#ea580c", href: "/products#campaigns" },
+      { icon: Globe,       sub: "Zoho", name: "Zoho Social",        desc: "Social media management and publishing across every channel.",                             color: "#2563eb", href: "/products#social" },
+      { icon: BarChart3,   sub: "Zoho", name: "Zoho Marketing Plus",desc: "Unified marketing suite to plan, execute, and measure campaigns.",                         color: "#9333ea", href: "/products#marketingplus" },
+      { icon: PieChart,    sub: "Zoho", name: "Zoho PageSense",     desc: "Conversion rate optimization, heatmaps, and funnel analytics.",                            color: "#0891b2", href: "/products#pagesense" },
+      { icon: Smartphone,  sub: "Zoho", name: "Zoho Backstage",     desc: "Event management platform for virtual, hybrid, and in-person events.",                    color: "#16a34a", href: "/products#backstage" },
+      { icon: Brain,       sub: "Zoho", name: "Zoho LandingPage",   desc: "Drag-and-drop landing page builder with AI testing and insights.",                        color: "#dc2626", href: "/products#landingpage" },
     ],
   },
   {
     id: "commerce",
     label: "Commerce and POS",
     products: [
-      { icon: LayoutGrid,  sub: "Enacle", name: "POS",           desc: "Modern retail POS to sell better and manage your entire business.",                           color: "#0891b2", href: "/products#pos" },
-      { icon: ShoppingCart,sub: "Enacle", name: "Commerce",      desc: "Build and manage your online store with a complete commerce platform.",                       color: "#16a34a", href: "/products#commerce" },
-      { icon: CreditCard,  sub: "Enacle", name: "Payments",      desc: "Accept payments and manage subscriptions seamlessly.",                                        color: "#2563eb", href: "/products#payments" },
-      { icon: ShoppingCart,sub: "Enacle", name: "Inventory",     desc: "Real-time inventory management across warehouses and sales channels.",                        color: "#ea580c", href: "/products#inventory" },
+      { icon: LayoutGrid,  sub: "Zoho", name: "Zoho POS",           desc: "Modern retail POS to manage catalog, inventory, and checkout.",                           color: "#0891b2", href: "/products#pos" },
+      { icon: ShoppingCart,sub: "Zoho", name: "Zoho Commerce",      desc: "Launch and scale your online store with native payments and shipping.",                    color: "#16a34a", href: "/products#commerce" },
+      { icon: CreditCard,  sub: "Zoho", name: "Zoho Payments",      desc: "Accept payments, manage subscriptions, and reconcile payouts effortlessly.",               color: "#2563eb", href: "/products#payments" },
+      { icon: ShoppingCart,sub: "Zoho", name: "Zoho Inventory",     desc: "Real-time inventory and order management across warehouses and channels.",                 color: "#ea580c", href: "/products#inventory" },
     ],
   },
   {
     id: "service",
     label: "Service",
     products: [
-      { icon: Headphones,    sub: "Enacle", name: "Desk",        desc: "Customer support helpdesk with AI triage and multi-channel support.",                         color: "#dc2626", href: "/products#desk" },
-      { icon: MessageSquare, sub: "Enacle", name: "Cliq",        desc: "Context-aware team messaging and collaboration platform.",                                     color: "#2563eb", href: "/products#cliq" },
-      { icon: Bot,           sub: "Enacle", name: "SalesIQ",     desc: "Live chat, chatbots and visitor intelligence platform.",                                       color: "#16a34a", href: "/products#salesiq" },
-      { icon: BookOpen,      sub: "Enacle", name: "Assist",      desc: "Remote support software for customer and IT teams.",                                           color: "#7c3aed", href: "/products#assist" },
+      { icon: Headphones,    sub: "Zoho", name: "Zoho Desk",        desc: "Customer support helpdesk with AI triage and omni-channel support.",                      color: "#dc2626", href: "/products#desk" },
+      { icon: MessageSquare, sub: "Zoho", name: "Zoho Cliq",        desc: "Team messaging and collaboration with channels, calls, and AI copilots.",                 color: "#2563eb", href: "/products#cliq" },
+      { icon: Bot,           sub: "Zoho", name: "Zoho SalesIQ",     desc: "Live chat, chatbots, and visitor intelligence platform for support.",                    color: "#16a34a", href: "/products#salesiq" },
+      { icon: BookOpen,      sub: "Zoho", name: "Zoho Assist",      desc: "Remote support software for customer and IT teams.",                                      color: "#7c3aed", href: "/products#assist" },
     ],
   },
   {
     id: "finance",
     label: "Finance",
     products: [
-      { icon: BarChart3,   sub: "Enacle", name: "Books",         desc: "Online accounting software to manage your business finances.",                                 color: "#16a34a", href: "/products#books" },
-      { icon: CreditCard,  sub: "Enacle", name: "Invoice",       desc: "Professional invoicing and billing software for businesses.",                                  color: "#2563eb", href: "/products#invoice" },
-      { icon: DollarSign,  sub: "Enacle", name: "Expense",       desc: "Expense reporting and management for companies of all sizes.",                                 color: "#ea580c", href: "/products#expense" },
-      { icon: PieChart,    sub: "Enacle", name: "Payroll",       desc: "Complete payroll management with compliance for businesses.",                                  color: "#9333ea", href: "/products#payroll" },
-      { icon: ShoppingCart,sub: "Enacle", name: "Checkout",      desc: "Smart payment checkout for online businesses.",                                                color: "#dc2626", href: "/products#checkout" },
+      { icon: BarChart3,   sub: "Zoho", name: "Zoho Books",         desc: "Online accounting to manage finances, compliance, and reporting.",                        color: "#16a34a", href: "/products#books" },
+      { icon: CreditCard,  sub: "Zoho", name: "Zoho Invoice",       desc: "Professional invoicing and billing software with smart reminders.",                       color: "#2563eb", href: "/products#invoice" },
+      { icon: DollarSign,  sub: "Zoho", name: "Zoho Expense",       desc: "Expense reporting and spend controls for every team.",                                    color: "#ea580c", href: "/products#expense" },
+      { icon: PieChart,    sub: "Zoho", name: "Zoho Payroll",       desc: "Complete payroll with compliance and multi-country support.",                              color: "#9333ea", href: "/products#payroll" },
+      { icon: ShoppingCart,sub: "Zoho", name: "Zoho Checkout",      desc: "Smart payment checkout flows for online businesses.",                                    color: "#dc2626", href: "/products#checkout" },
     ],
   },
   {
     id: "erp",
     label: "ERP",
     products: [
-      { icon: Brain,       sub: "Enacle", name: "ERP",           desc: "ERP software built for businesses to run faster and smarter.",                                 color: "#2563eb", href: "/products#erp" },
-      { icon: Package,     sub: "Enacle", name: "Inventory",     desc: "Multi-location inventory and order management.",                                               color: "#ea580c", href: "/products#inventory" },
-      { icon: ShoppingCart,sub: "Enacle", name: "Procurement",   desc: "End-to-end procurement and vendor management.",                                                color: "#dc2626", href: "/products#procurement" },
-      { icon: BarChart3,   sub: "Enacle", name: "Analytics",     desc: "Business intelligence and embedded analytics platform.",                                       color: "#7c3aed", href: "/products#analytics" },
+      { icon: Brain,       sub: "Zoho", name: "Zoho ERP",           desc: "Unify finance, operations, supply chain, and HR on one platform.",                       color: "#2563eb", href: "/products#erp" },
+      { icon: Package,     sub: "Zoho", name: "Zoho Inventory",     desc: "Multi-location inventory and order management for unified ops.",                          color: "#ea580c", href: "/products#inventory" },
+      { icon: ShoppingCart,sub: "Zoho", name: "Zoho Procurement",   desc: "Vendor management and procurement automation for every business.",                        color: "#dc2626", href: "/products#procurement" },
+      { icon: BarChart3,   sub: "Zoho", name: "Zoho Analytics",     desc: "Embedded BI and analytics layered across your ERP data.",                                  color: "#7c3aed", href: "/products#analytics" },
     ],
   },
   {
     id: "email",
-    label: "Email, Storage & Collaboration",
+    label: "Email, Storage, and Collaboration",
     products: [
-      { icon: Mail,          sub: "Enacle", name: "Mail",        desc: "Secure business email with shared inboxes and collaboration.",                                 color: "#2563eb", href: "/products#mail" },
-      { icon: MessageSquare, sub: "Enacle", name: "Cliq",        desc: "Team messaging with channels, calls and context-aware collaboration.",                         color: "#0891b2", href: "/products#cliq" },
-      { icon: Calendar,      sub: "Enacle", name: "Calendar",    desc: "Smart shared calendar with scheduling and availability management.",                           color: "#ea580c", href: "/products#calendar" },
-      { icon: FileText,      sub: "Enacle", name: "Docs",        desc: "Collaborative document creation linked to projects and tasks.",                                color: "#16a34a", href: "/products#docs" },
-      { icon: Database,      sub: "Enacle", name: "WorkDrive",   desc: "Team file storage, sharing and collaboration in one place.",                                   color: "#7c3aed", href: "/products#workdrive" },
+      { icon: Mail,          sub: "Zoho", name: "Zoho Mail",        desc: "Secure business email with shared inboxes and collaboration built in.",                   color: "#2563eb", href: "/products#mail" },
+      { icon: MessageSquare, sub: "Zoho", name: "Zoho Cliq",        desc: "Team messaging with threads, calls, and AI-powered notes.",                               color: "#0891b2", href: "/products#cliq" },
+      { icon: Calendar,      sub: "Zoho", name: "Zoho Calendar",    desc: "Smart calendar with scheduling, availability, and meeting insights.",                     color: "#ea580c", href: "/products#calendar" },
+      { icon: FileText,      sub: "Zoho", name: "Zoho Docs",        desc: "Collaborative document creation linked to projects and tasks.",                           color: "#16a34a", href: "/products#docs" },
+      { icon: Database,      sub: "Zoho", name: "Zoho WorkDrive",   desc: "Team file storage, sharing, and collaboration in one place.",                             color: "#7c3aed", href: "/products#workdrive" },
     ],
   },
   {
     id: "hr",
     label: "Human Resources",
     products: [
-      { icon: Users,       sub: "Enacle", name: "People",        desc: "HR software for employee lifecycle, performance and engagement.",                              color: "#ec4899", href: "/products#people" },
-      { icon: BookOpen,    sub: "Enacle", name: "Recruit",       desc: "Applicant tracking system to hire talent faster.",                                             color: "#2563eb", href: "/products#recruit" },
-      { icon: Target,      sub: "Enacle", name: "Payroll",       desc: "Complete payroll management with tax compliance.",                                             color: "#16a34a", href: "/products#payroll" },
-      { icon: LayoutGrid,  sub: "Enacle", name: "Workerly",      desc: "Temp staffing and workforce management platform.",                                             color: "#ea580c", href: "/products#workerly" },
+      { icon: Users,       sub: "Zoho", name: "Zoho People",        desc: "HR for the employee lifecycle, performance, and engagement.",                             color: "#ec4899", href: "/products#people" },
+      { icon: BookOpen,    sub: "Zoho", name: "Zoho Recruit",       desc: "Applicant tracking system to hire and onboard talent faster.",                             color: "#2563eb", href: "/products#recruit" },
+      { icon: Target,      sub: "Zoho", name: "Zoho Payroll",       desc: "Payroll with compliance, benefits, and payouts handled for you.",                         color: "#16a34a", href: "/products#payroll" },
+      { icon: LayoutGrid,  sub: "Zoho", name: "Zoho Workerly",      desc: "Temp staffing and workforce management platform.",                                        color: "#ea580c", href: "/products#workerly" },
+    ],
+  },
+  {
+    id: "legal",
+    label: "Legal",
+    products: [
+      { icon: FileText,    sub: "Zoho", name: "Zoho Contracts",     desc: "Draft, negotiate, approve, and govern contracts with guardrails.",                       color: "#2563eb", href: "/products#contracts" },
+      { icon: Target,      sub: "Zoho", name: "Zoho Case",          desc: "Matter and case management with tasks, docs, and deadlines.",                             color: "#9333ea", href: "/products#case" },
+      { icon: Shield,      sub: "Zoho", name: "Zoho Compliance",    desc: "Policy management, risk registers, and audit-ready reporting.",                          color: "#16a34a", href: "/products#compliance" },
     ],
   },
   {
     id: "security",
     label: "Security and IT Management",
     products: [
-      { icon: Shield,      sub: "Enacle", name: "Vault",         desc: "Enterprise password manager and secure credential storage.",                                   color: "#16a34a", href: "/products#vault" },
-      { icon: Settings,    sub: "Enacle", name: "OneAuth",       desc: "Multi-factor authentication and identity management.",                                         color: "#2563eb", href: "/products#oneauth" },
-      { icon: Database,    sub: "Enacle", name: "Directory",     desc: "Centralized identity and access management for your organisation.",                            color: "#7c3aed", href: "/products#directory" },
+      { icon: Shield,      sub: "Zoho", name: "Zoho Vault",         desc: "Enterprise password manager and secure credential storage.",                             color: "#16a34a", href: "/products#vault" },
+      { icon: Settings,    sub: "Zoho", name: "Zoho OneAuth",       desc: "Multi-factor authentication, SSO, and identity management.",                             color: "#2563eb", href: "/products#oneauth" },
+      { icon: Database,    sub: "Zoho", name: "Zoho Directory",     desc: "Centralized identity and access management for your organisation.",                      color: "#7c3aed", href: "/products#directory" },
     ],
   },
   {
     id: "bi",
     label: "BI and Analytics",
     products: [
-      { icon: BarChart3,   sub: "Enacle", name: "Analytics",     desc: "Self-serve business intelligence and embedded analytics platform.",                            color: "#7c3aed", href: "/products#analytics" },
-      { icon: PieChart,    sub: "Enacle", name: "DataPrep",      desc: "No-code data preparation and transformation for analytics.",                                  color: "#2563eb", href: "/products#dataprep" },
-      { icon: Brain,       sub: "Enacle", name: "Embedded BI",   desc: "Embed powerful analytics directly into your product.",                                         color: "#ea580c", href: "/products#embeddedbi" },
+      { icon: BarChart3,   sub: "Zoho", name: "Zoho Analytics",     desc: "Self-serve BI, embedded analytics, and decision dashboards.",                             color: "#7c3aed", href: "/products#analytics" },
+      { icon: PieChart,    sub: "Zoho", name: "Zoho DataPrep",      desc: "No-code data preparation and transformation for analytics.",                             color: "#2563eb", href: "/products#dataprep" },
+      { icon: Brain,       sub: "Zoho", name: "Zoho Embedded BI",   desc: "Embed powerful analytics directly into your product.",                                   color: "#ea580c", href: "/products#embeddedbi" },
     ],
   },
   {
     id: "pm",
     label: "Project Management",
     products: [
-      { icon: Layers,      sub: "Enacle", name: "Projects",      desc: "End-to-end project management with Kanban, Gantt and sprints.",                               color: "#2563eb", href: "/products#projects" },
-      { icon: GitBranch,   sub: "Enacle", name: "Sprints",       desc: "Agile sprint management with velocity tracking and retrospectives.",                           color: "#6366f1", href: "/products#sprints" },
-      { icon: Clock,       sub: "Enacle", name: "BugTracker",    desc: "Issue tracking and bug management integrated with development.",                               color: "#dc2626", href: "/products#bugtracker" },
-      { icon: Package,     sub: "Enacle", name: "Projects Plus", desc: "Enterprise project management with advanced resource allocation.",                             color: "#c2410c", href: "/products#projectsplus" },
+      { icon: Layers,      sub: "Zoho", name: "Zoho Projects",      desc: "Projects with Kanban, Gantt, sprints, and automated workflows.",                         color: "#2563eb", href: "/products#projects" },
+      { icon: GitBranch,   sub: "Zoho", name: "Zoho Sprints",       desc: "Agile sprint management with velocity tracking and retros.",                              color: "#6366f1", href: "/products#sprints" },
+      { icon: Clock,       sub: "Zoho", name: "Zoho BugTracker",    desc: "Issue tracking and bug management integrated with development.",                         color: "#dc2626", href: "/products#bugtracker" },
+      { icon: Package,     sub: "Zoho", name: "Zoho Projects Plus", desc: "Enterprise PM with resource allocation, budgets, and approvals.",                         color: "#c2410c", href: "/products#projectsplus" },
     ],
   },
   {
     id: "dev",
     label: "Developer Platforms",
     products: [
-      { icon: Code2,       sub: "Enacle", name: "Creator",       desc: "Low-code platform to build custom business apps without coding.",                              color: "#2563eb", href: "/products#creator" },
-      { icon: Cpu,         sub: "Enacle", name: "IoT",           desc: "IoT device management and real-time data pipeline platform.",                                  color: "#16a34a", href: "/products#iot" },
-      { icon: Database,    sub: "Enacle", name: "Catalyst",      desc: "Serverless platform to build, deploy and scale cloud functions.",                             color: "#7c3aed", href: "/products#catalyst" },
-      { icon: Workflow,    sub: "Enacle", name: "Flow",          desc: "No-code workflow automation connecting 200+ apps.",                                            color: "#ea580c", href: "/products#flow" },
-      { icon: Brain,       sub: "Enacle", name: "MCP",           desc: "Build agentic workflows and AI-ready integrations.",                                           color: "#9333ea", href: "/products#mcp" },
+      { icon: Code2,       sub: "Zoho", name: "Zoho Creator",       desc: "Low-code platform to build custom business apps fast.",                                   color: "#2563eb", href: "/products#creator" },
+      { icon: Database,    sub: "Zoho", name: "Zoho Catalyst",      desc: "Serverless platform to build, deploy, and scale cloud functions.",                        color: "#7c3aed", href: "/products#catalyst" },
+      { icon: Workflow,    sub: "Zoho", name: "Zoho Flow",          desc: "No-code workflow automation connecting 200+ apps.",                                      color: "#ea580c", href: "/products#flow" },
+      { icon: Brain,       sub: "Zoho", name: "Zoho MCP",           desc: "Build agentic workflows and AI-ready integrations.",                                     color: "#9333ea", href: "/products#mcp" },
     ],
   },
   {
-    id: "solar",
-    label: "Solar",
+    id: "iot",
+    label: "IoT",
     products: [
-      { icon: SunMedium,       sub: "Enacle", name: "Solar ERP",         desc: "End-to-end ERP built for solar businesses — from lead to installation to after-sales.",    color: "#f59e0b", href: "/products/solar" },
-      { icon: BatteryCharging, sub: "Enacle", name: "Energy Monitor",    desc: "Real-time solar energy production and consumption monitoring across all your sites.",       color: "#16a34a", href: "/products#energy-monitor" },
-      { icon: AreaChart,       sub: "Enacle", name: "Solar Analytics",   desc: "AI-powered performance analytics, yield forecasting and ROI dashboards for solar plants.",  color: "#7c3aed", href: "/products#solar-analytics" },
-      { icon: Wrench,          sub: "Enacle", name: "Field Service",     desc: "Schedule and dispatch technicians, track O&M jobs, and manage SLAs for solar assets.",     color: "#0891b2", href: "/products#field-service" },
-      { icon: CloudSun,        sub: "Enacle", name: "Weather Intelligence", desc: "Hyperlocal weather data and irradiance forecasting to optimise solar generation.",       color: "#ea580c", href: "/products#weather-intelligence" },
-      { icon: MonitorCheck,    sub: "Enacle", name: "Asset Management",  desc: "Track panels, inverters and batteries with automated fault detection and alerting.",        color: "#dc2626", href: "/products#asset-management" },
-      { icon: Activity,        sub: "Enacle", name: "Grid Connect",      desc: "Seamless net metering, export billing, and utility grid integration for solar operators.",  color: "#9333ea", href: "/products#grid-connect" },
-      { icon: Thermometer,     sub: "Enacle", name: "Thermal Scanner",   desc: "AI-driven thermal imaging and anomaly detection to maximise panel uptime and efficiency.",  color: "#c2410c", href: "/products#thermal-scanner" },
-      { icon: DollarSign,      sub: "Enacle", name: "Solar Finance",     desc: "Manage solar project financing, EMI schedules, and subsidy claims in one unified portal.", color: "#2563eb", href: "/products#solar-finance" },
+      { icon: Cpu,             sub: "Zoho", name: "Zoho IoT",            desc: "Device onboarding, digital twins, and real-time telemetry pipelines.",                   color: "#16a34a", href: "/products#iot" },
+      { icon: Activity,        sub: "Zoho", name: "Zoho Edge",           desc: "Edge orchestration to run secure workloads closer to your devices.",                     color: "#2563eb", href: "/products#edge" },
+      { icon: MonitorCheck,    sub: "Zoho", name: "Zoho Asset Monitor",  desc: "Monitor assets with anomaly detection, alerts, and remote actions.",                    color: "#dc2626", href: "/products#asset-monitor" },
+      { icon: Thermometer,     sub: "Zoho", name: "Zoho Sense",          desc: "Sensor data platform with rules engine and predictive maintenance.",                    color: "#c2410c", href: "/products#sense" },
     ],
   },
 ];
-
 /* ─── Solutions & Platform menus ────────────────────────────────────── */
 const SOLUTIONS_MENU = [
   { label: "For Engineering",   desc: "Ship faster with AI sprint tools",        icon: GitBranch,     color: "#6366f1", href: "/solutions#engineering"  },
@@ -251,7 +250,7 @@ function ProductCard({ p, onClose, index }: { p: Product; onClose: () => void; i
       <Link
         href={p.href}
         onClick={onClose}
-        className="group flex flex-col gap-3 p-5 rounded-none border border-slate-200 dark:border-slate-700/60 hover:border-slate-300 dark:hover:border-slate-600 bg-white dark:bg-[#0f172a] hover:shadow-md transition-all h-full"
+        className="group flex flex-col gap-3 p-5 rounded-xl border border-slate-200 dark:border-slate-700/60 hover:border-slate-300 dark:hover:border-slate-600 bg-white dark:bg-[#0f172a] hover:shadow-lg transition-all h-full"
       >
         {/* Icon + "Enacle / ProductName" header — matches Zoho exactly */}
         <div className="flex items-start gap-4">
@@ -282,7 +281,7 @@ function ProductCard({ p, onClose, index }: { p: Product; onClose: () => void; i
 }
 
 /* ─── Products Mega Menu ─────────────────────────────────────────────── */
-const TABS = ["Apps", "Suites", "Zoho One", "Marketplace"];
+const TABS = ["Apps", "Suites", "Zoho One", "Marketplace", "Explore All Products"];
 
 function ProductsMegaMenu({ onClose }: { onClose: () => void }) {
   const [activeTab, setActiveTab] = useState("Apps");
@@ -290,17 +289,23 @@ function ProductsMegaMenu({ onClose }: { onClose: () => void }) {
   const [query, setQuery] = useState("");
 
   const activeCat = CATEGORIES.find((c) => c.id === activeCatId) ?? CATEGORIES[0];
+  const allProducts = CATEGORIES.flatMap((c) => c.products);
+  const isExploreAll = activeTab === "Explore All Products";
 
   const displayed: Product[] = query.trim()
-    ? CATEGORIES.flatMap((c) => c.products).filter(
+    ? allProducts.filter(
         (p) =>
           p.name.toLowerCase().includes(query.toLowerCase()) ||
           p.desc.toLowerCase().includes(query.toLowerCase())
       )
+    : isExploreAll
+    ? allProducts
     : activeCat.products;
 
   const heading = query.trim()
     ? `${displayed.length} result${displayed.length !== 1 ? "s" : ""} for "${query}"`
+    : isExploreAll
+    ? "All Products"
     : activeCat.label;
 
   return (
@@ -308,7 +313,7 @@ function ProductsMegaMenu({ onClose }: { onClose: () => void }) {
 
       {/* ── Tab bar row (full width, no search here) ── */}
       <div className="border-b border-slate-200 dark:border-slate-700">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-13">
+        <div className="mx-auto w-full px-4 sm:px-8 lg:px-12 flex items-center justify-between h-13">
           {/* Tabs */}
           <div className="flex items-center h-full">
             {TABS.map((tab) => (
@@ -344,10 +349,10 @@ function ProductsMegaMenu({ onClose }: { onClose: () => void }) {
       </div>
 
       {/* ── Body: left sidebar + right grid ── */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex" style={{ maxHeight: "74vh" }}>
+      <div className="mx-auto w-full px-4 sm:px-8 lg:px-12 flex" style={{ maxHeight: "74vh" }}>
 
         {/* ── LEFT sidebar ── */}
-        <div className="w-52 shrink-0 border-r border-slate-100 dark:border-slate-800 flex flex-col">
+        <div className="w-64 shrink-0 border-r border-slate-100 dark:border-slate-800 flex flex-col">
 
           {/* Search — inside left column, matches Zoho exactly */}
           <div className="px-3 pt-4 pb-3">
@@ -366,7 +371,7 @@ function ProductsMegaMenu({ onClose }: { onClose: () => void }) {
           {/* Category list */}
           <div className="flex-1 overflow-y-auto pb-2">
             {CATEGORIES.map((cat) => {
-              const isActive = cat.id === activeCatId && !query.trim();
+              const isActive = cat.id === activeCatId && !query.trim() && !isExploreAll;
               return (
                 <button
                   key={cat.id}
@@ -401,7 +406,7 @@ function ProductsMegaMenu({ onClose }: { onClose: () => void }) {
         {/* ── RIGHT grid ── */}
         <div className="flex-1 py-6 px-7 overflow-y-auto">
           <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-5">{heading}</h3>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {displayed.map((p, i) => (
               <ProductCard key={p.name + i} p={p} onClose={onClose} index={i} />
             ))}
@@ -527,13 +532,13 @@ export function Header() {
     { label: "Products",   href: "/products",   mega: true  },
     { label: "Platform",   href: "/platform",   mega: true  },
     { label: "Solutions",  href: "/solutions",  mega: true  },
-    { label: "Enterprise", href: "/enterprise", mega: false },
     { label: "Pricing",    href: "/pricing",    mega: false },
-    { label: "Resources",  href: "/resources",  mega: false },
     { label: "Customers",  href: "/customers",  mega: false },
+    { label: "About",      href: "/about",      mega: false },
     { label: "Careers",    href: "/careers",    mega: false },
     { label: "Partners",   href: "/partners",   mega: false },
     { label: "Contact",    href: "/contact",    mega: false },
+    { label: "Status",     href: "/status",     mega: false },
   ];
 
   return (
