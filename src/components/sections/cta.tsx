@@ -4,6 +4,7 @@ import Link from "next/link";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Marquee } from "@/components/ui/marquee";
 import { BorderBeam } from "@/components/ui/border-beam";
+import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { ArrowRight, CheckCircle2, Star, Zap, Shield, Clock } from "lucide-react";
 
 const TESTIMONIALS = [
@@ -36,9 +37,13 @@ export function CTA() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <BlurFade>
-          <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500 mb-6">
-            What teams are saying
-          </p>
+          <div className="mb-6 flex items-center justify-center gap-2">
+            <div className="h-px w-8 bg-[#EF9449]" />
+            <AnimatedShinyText shimmerWidth={100} className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#EF9449]">
+              What teams are saying
+            </AnimatedShinyText>
+            <div className="h-px w-8 bg-[#EF9449]" />
+          </div>
         </BlurFade>
 
         <BlurFade delay={0.08}>
@@ -106,14 +111,22 @@ export function CTA() {
             <div className="absolute top-1/3 right-1/4 w-40 h-40 rounded-full blur-3xl pointer-events-none" style={{ background: "rgba(73,204,249,0.08)" }} />
 
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6" style={{ border: "1px solid rgba(253,113,175,0.4)", background: "rgba(253,113,175,0.1)" }}>
-                <Zap className="h-3.5 w-3.5" style={{ color: "#FD71AF" }} />
-                <span className="text-sm font-semibold" style={{ color: "#FD71AF" }}>Start for free today</span>
+              <div className="mb-6 flex items-center justify-center gap-2">
+                <div className="h-px w-8 bg-[#EF9449]" />
+                <AnimatedShinyText shimmerWidth={100} className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#EF9449]">
+                  Start for free today
+                </AnimatedShinyText>
+                <div className="h-px w-8 bg-[#EF9449]" />
               </div>
 
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-5 leading-tight">
+              <h2 className="mx-auto mb-5 max-w-2xl text-center text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
                 Your team deserves{" "}
-                <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg,#7B68EE,#FD71AF)" }}>better than this</span>
+                <span className="relative inline-block">
+                  <span style={{ color: "#EF9449" }}>better than this</span>
+                  <svg className="absolute -bottom-1 left-0 w-full" height="6" viewBox="0 0 200 6" preserveAspectRatio="none">
+                    <path d="M0 5 Q50 1 100 5 Q150 9 200 5" stroke="#EF9449" strokeWidth="1.8" fill="none" opacity="0.5" />
+                  </svg>
+                </span>
               </h2>
 
               <p className="text-lg text-slate-400 max-w-xl mx-auto leading-relaxed mb-8">

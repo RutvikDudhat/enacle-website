@@ -114,6 +114,76 @@ export const PRODUCTS_DATA: ProductData[] = [
     },
   },
 
+  /* ─── Solar CRM ─────────────────────────────────────────────────────── */
+  {
+    slug: "solar-crm",
+    name: "Solar CRM",
+    sub: "Enacle",
+    tagline: "CRM built for solar energy businesses",
+    heroHeading: "A CRM that powers\nyour solar business\nfrom lead to install",
+    heroParagraph:
+      "Track leads, manage installations, and deliver exceptional service — all in one platform designed specifically for solar companies.",
+    accentColor: "#f59e0b",
+    accentGradient: "from-amber-500 to-orange-600",
+    category: "Sales",
+    stats: [
+      { value: "3×",    label: "faster lead conversion" },
+      { value: "40%",   label: "increase in install bookings" },
+      { value: "2k+",   label: "solar companies on Solar CRM" },
+    ],
+    valueProps: [
+      { icon: "☀️", title: "Built for solar workflows", desc: "From site surveys to permit tracking to commissioning — every step is mapped to how solar businesses actually work." },
+      { icon: "⚡", title: "Faster from quote to install", desc: "AI-powered lead scoring and automated follow-ups help you close deals quicker and book more installations." },
+    ],
+    sections: [
+      {
+        eyebrow: "LEADS • OPPORTUNITIES • PIPELINE",
+        heading: "Track every lead\nfrom first call to install",
+        sub: "Solar-specific pipeline stages from consultation to site survey to commissioning.",
+        features: [
+          { title: "Solar lead capture",     desc: "Capture leads from web forms, referrals, and partner networks with automatic qualification scoring." },
+          { title: "Site survey scheduler",  desc: "Book site surveys with integrated calendar and automated reminder sequences for homeowners." },
+          { title: "Proposal generator",     desc: "Generate professional solar proposals with energy savings calculations and financing options." },
+        ],
+        visual: "pipeline",
+        visualBg: "from-amber-500 to-orange-600",
+        flip: false,
+      },
+      {
+        eyebrow: "INSTALLATIONS • PERMITS • COMMISSIONING",
+        heading: "Manage every install\nwithout the chaos",
+        sub: "Track permits, inspections, and installations in one unified workflow.",
+        features: [
+          { title: "Permit tracking",        desc: "Monitor permit submissions, approvals, and inspections with automated status updates." },
+          { title: "Crew scheduling",         desc: "Assign installation crews, track availability, and optimize routes for maximum efficiency." },
+          { title: "Equipment inventory",    desc: "Track panels, inverters, and batteries with automatic stock alerts and supplier integration." },
+          { title: "Commissioning checklist", desc: "Never miss a step with built-in checklists for final inspections and utility interconnection." },
+          { title: "Customer portal",         desc: "Give homeowners real-time visibility into their project status and documentation." },
+        ],
+        visual: "dashboard",
+        visualBg: "from-orange-500 to-red-600",
+        flip: true,
+      },
+    ],
+    connectsTo: [
+      { name: "Gmail",        color: "#EA4335" },
+      { name: "Outlook",      color: "#0078D4" },
+      { name: "QuickBooks",   color: "#2CA01C" },
+      { name: "Aurora Solar", color: "#00A3E0" },
+      { name: "Span",         color: "#FF6B35" },
+      { name: "HubSpot",      color: "#FF7A59" },
+    ],
+    templates: [
+      { name: "Residential solar sale", desc: "Complete workflow from lead to install for residential customers.", color: "#f59e0b" },
+      { name: "Commercial proposal",    desc: "Multi-site commercial solar project management template.", color: "#ea580c" },
+      { name: "Service & maintenance",  desc: "Ongoing O&M contract management and scheduling.", color: "#7c3aed" },
+    ],
+    cta: {
+      heading: "Power your solar business\nwith the right CRM",
+      sub: "Solar CRM gives you everything you need to convert more leads and deliver flawless installations.",
+    },
+  },
+
   /* ─── CRM ───────────────────────────────────────────────────────────── */
   {
     slug: "crm",

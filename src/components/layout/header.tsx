@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "next-themes";
 
-/* ─── Types ─────────────────────────────────────────────────────────── */
+
 type Product = {
   icon: React.ElementType;
   sub: string;
@@ -32,6 +32,7 @@ const CATEGORIES: { id: string; label: string; products: Product[] }[] = [
     id: "recent",
     label: "Recent Launches",
     products: [
+      { icon: SunMedium,   sub: "Zoho", name: "Solar CRM",           desc: "CRM built for solar energy businesses to manage leads, installations, and service.",       color: "#f59e0b", href: "/products/solar-crm" },
       { icon: Brain,       sub: "Zoho", name: "Zoho ERP",            desc: "ERP built for faster, smarter operations across finance, ops, and IT.",                   color: "#2563eb", href: "/products#erp" },
       { icon: ShoppingCart,sub: "Zoho", name: "Zoho Procurement",    desc: "Complete source-to-pay platform that turns procurement into a growth lever.",             color: "#dc2626", href: "/products#procurement" },
       { icon: CreditCard,  sub: "Zoho", name: "Zoho Spend",          desc: "Control every business spend from cards to expenses in one place.",                        color: "#ea580c", href: "/products#spend" },
@@ -100,6 +101,7 @@ const CATEGORIES: { id: string; label: string; products: Product[] }[] = [
     label: "ERP",
     products: [
       { icon: Brain,       sub: "Zoho", name: "Zoho ERP",           desc: "Unify finance, operations, supply chain, and HR on one platform.",                       color: "#2563eb", href: "/products#erp" },
+      { icon: SunMedium,   sub: "Zoho", name: "Solar ERP",          desc: "ERP solution designed for solar energy businesses with project tracking.",                  color: "#f59e0b", href: "/products/solar-erp" },
       { icon: Package,     sub: "Zoho", name: "Zoho Inventory",     desc: "Multi-location inventory and order management for unified ops.",                          color: "#ea580c", href: "/products#inventory" },
       { icon: ShoppingCart,sub: "Zoho", name: "Zoho Procurement",   desc: "Vendor management and procurement automation for every business.",                        color: "#dc2626", href: "/products#procurement" },
       { icon: BarChart3,   sub: "Zoho", name: "Zoho Analytics",     desc: "Embedded BI and analytics layered across your ERP data.",                                  color: "#7c3aed", href: "/products#analytics" },
@@ -211,11 +213,11 @@ const PLATFORM_MENU = [
 
 /* ─── Theme toggle ──────────────────────────────────────────────────── */
 function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   if (!mounted) return <div className="w-9 h-9" />;
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
@@ -249,6 +251,7 @@ function ProductCard({ p, onClose, index }: { p: Product; onClose: () => void; i
     >
       <Link
         href={p.href}
+        target="_blank"
         onClick={onClose}
         className="group flex flex-col gap-3 p-5 rounded-xl border border-slate-200 dark:border-slate-700/60 hover:border-slate-300 dark:hover:border-slate-600 bg-white dark:bg-[#0f172a] hover:shadow-lg transition-all h-full"
       >
@@ -572,8 +575,9 @@ export function Header() {
                 onMouseLeave={() => { if (item.mega) scheduleClose(); }}
               >
                 {item.mega ? (
-                  <button
-                    onClick={() => setOpen((p) => (p === item.label ? null : item.label))}
+                  <Link
+                    href={item.href}
+                    onClick={close}
                     className={`flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors select-none ${
                       open === item.label
                         ? "text-accent-enacle dark:text-[#9d8ff5] bg-violet-50 dark:bg-violet-950/40"
@@ -584,7 +588,7 @@ export function Header() {
                     <motion.span animate={{ rotate: open === item.label ? 180 : 0 }} transition={{ duration: 0.2 }} className="inline-flex">
                       <ChevronDown className="h-3.5 w-3.5" />
                     </motion.span>
-                  </button>
+                  </Link>
                 ) : (
                   <Link
                     href={item.href}

@@ -2,6 +2,7 @@
 
 import { BlurFade } from "@/components/ui/blur-fade";
 import { BorderBeam } from "@/components/ui/border-beam";
+import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { motion } from "motion/react";
 import {
   Brain, Bot, Zap, BarChart3,
@@ -205,21 +206,27 @@ export function Features() {
         {/* ── HEADLINE ─────────────────────────────── */}
         <div className="text-center mb-16">
           <BlurFade>
-            <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 dark:border-white/10 bg-violet-50 dark:bg-white/5 px-3.5 py-1.5 mb-5">
-              <Sparkles className="h-3.5 w-3.5" style={{ color: "#7B68EE" }} />
-              <span className="text-sm font-semibold tracking-wide" style={{ color: "#7B68EE" }}>Platform capabilities</span>
+            <div className="mb-4 flex items-center justify-center gap-2">
+              <div className="h-px w-8 bg-[#EF9449]" />
+              <AnimatedShinyText shimmerWidth={100} className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#EF9449]">
+                Platform capabilities
+              </AnimatedShinyText>
+              <div className="h-px w-8 bg-[#EF9449]" />
             </div>
           </BlurFade>
           <BlurFade delay={0.08}>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#0f172a] dark:text-white mb-5 leading-[1.05]">
-              Every tool your team<br />
-              <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg,#7B68EE,#FD71AF)" }}>
-                will ever need
+            <h2 className="mx-auto mb-3 max-w-2xl text-center text-4xl font-semibold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+              Every tool your team{" "}
+              <span className="relative inline-block">
+                <span style={{ color: "#EF9449" }}>will ever need</span>
+                <svg className="absolute -bottom-1 left-0 w-full" height="6" viewBox="0 0 200 6" preserveAspectRatio="none">
+                  <path d="M0 5 Q50 1 100 5 Q150 9 200 5" stroke="#EF9449" strokeWidth="1.8" fill="none" opacity="0.5" />
+                </svg>
               </span>
             </h2>
           </BlurFade>
           <BlurFade delay={0.14}>
-            <p className="text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto leading-relaxed">
+            <p className="mx-auto mb-4 max-w-lg text-center text-sm leading-relaxed text-gray-500 dark:text-slate-400">
               Replace every disconnected tool with one AI-powered workspace.
             </p>
           </BlurFade>
