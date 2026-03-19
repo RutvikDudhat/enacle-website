@@ -109,7 +109,7 @@ export function PartnersApply() {
 
         {/* Process timeline */}
         <div className="relative mb-24">
-          <div className="hidden lg:block absolute top-8 left-[calc(12.5%+24px)] right-[calc(12.5%+24px)] h-px bg-linear-to-r from-transparent via-blue-300 dark:via-blue-700 to-transparent" />" />
+          <div className="hidden lg:block absolute top-8 left-[calc(12.5%+24px)] right-[calc(12.5%+24px)] h-px bg-linear-to-r from-transparent via-blue-300 dark:via-blue-700 to-transparent" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {PROCESS.map((p, i) => (
               <BlurFade key={p.step} delay={i * 0.08}>
@@ -127,7 +127,7 @@ export function PartnersApply() {
 
         {/* ── Partner Spotlights ── */}
         <BlurFade className="text-center mb-10">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600 mb-3">Partner Spotlights</p> Spotlights</p>
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600 mb-3">Partner Spotlights</p>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0f172a] dark:text-white">
             Partners who are winning
           </h2>
@@ -136,7 +136,7 @@ export function PartnersApply() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-24">
           {SPOTLIGHTS.map((s, i) => (
             <BlurFade key={s.name} delay={i * 0.07}>
-              <div className="rounded-2xl border border-zinc-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 relative overflow-hidden hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-md transition-all duration-200">00">
+              <div className="rounded-2xl border border-zinc-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 relative overflow-hidden hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-md transition-all duration-200">
                 <BorderBeam size={250} duration={12} colorFrom="#3b82f6" colorTo="#8b5cf6" />
 
                 {/* Quote */}
@@ -166,7 +166,7 @@ export function PartnersApply() {
           {/* Left — info */}
           <div className="lg:col-span-2">
             <BlurFade>
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600 mb-3">Apply Now</p>ply Now</p>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600 mb-3">Apply Now</p>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0f172a] dark:text-white mb-4 leading-snug">
                 Ready to grow with Enacle?
               </h2>

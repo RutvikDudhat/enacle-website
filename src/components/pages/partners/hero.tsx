@@ -112,7 +112,7 @@ export function PartnersHero() {
             <div className="mt-6 rounded-2xl border border-zinc-100 dark:border-slate-800 bg-zinc-50 dark:bg-slate-900 px-5 py-4">
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 dark:text-slate-500 mb-3">Trusted by agencies & ISVs worldwide</p>
               <div className="flex flex-wrap gap-x-5 gap-y-2">
-                {["Accenture", "Deloitte", "Wipro", "Razorpay", "Freshworks", "Zoho"].map((name) => (
+                {["Accenture", "Deloitte", "Wipro", "Razorpay", "Freshworks"].map((name) => (
                   <span key={name} className="text-xs font-extrabold text-zinc-300 dark:text-slate-600 uppercase tracking-wider">{name}</span>
                 ))}
               </div>

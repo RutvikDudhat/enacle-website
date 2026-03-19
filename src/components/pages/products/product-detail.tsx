@@ -10,6 +10,26 @@ import {
 } from "lucide-react";
 import type { ProductData } from "@/lib/products-data";
 
+// Solar Landing Page Components
+import Navbar from "@/components/landing/Navbar";
+import HeroSection from "@/components/landing/HeroSection";
+import TrustedBySection from "@/components/landing/TrustedBySection";
+import FeaturesGrid from "@/components/landing/FeaturesGrid";
+import DashboardShowcase from "@/components/landing/DashboardShowcase";
+import MultiDeviceMockups from "@/components/landing/MultiDeviceMockups";
+import WorkflowSection from "@/components/landing/WorkflowSection";
+import AnalyticsSection from "@/components/landing/AnalyticsSection";
+import ModulesGrid from "@/components/landing/ModulesGrid";
+import AutomationSection from "@/components/landing/AutomationSection";
+import ProjectManagementSection from "@/components/landing/ProjectManagementSection";
+import BillingSection from "@/components/landing/BillingSection";
+import SecuritySection from "@/components/landing/SecuritySection";
+import TestimonialsSection from "@/components/landing/TestimonialsSection";
+import GrowthSection from "@/components/landing/GrowthSection";
+import PricingSection from "@/components/landing/PricingSection";
+import CTASection from "@/components/landing/CTASection";
+import Footer from "@/components/landing/Footer";
+
 /* ═══════════════════════════════════════════════════════════════════
    VISUAL MOCKUPS
 ═══════════════════════════════════════════════════════════════════ */
@@ -258,12 +278,215 @@ function ChartMockup({ accent }: { accent: string }) {
   );
 }
 
+function SolarCRMPipelineMockup({ accent }: { accent: string }) {
+  const stages = ["New Lead", "Consultation", "Site Survey", "Proposal", "Installed"];
+  const leads = [
+    { name: "Sharma Residence",  kw: "5.4 kW",  value: "₹2.8L",  prob: 72,  stage: "Proposal",    avatar: "SR" },
+    { name: "Delhi TechPark",    kw: "40 kW",   value: "₹18L",   prob: 85,  stage: "Site Survey",  avatar: "DT" },
+    { name: "GreenCity Apts",    kw: "120 kW",  value: "₹48L",   prob: 90,  stage: "Installed",    avatar: "GA" },
+    { name: "Patil Farmhouse",   kw: "8 kW",    value: "₹3.5L",  prob: 55,  stage: "Consultation", avatar: "PF" },
+  ];
+  return (
+    <BrowserFrame>
+      <div className="bg-[#0f1729] p-4 min-h-80">
+        <div className="flex gap-1 mb-4 overflow-hidden">
+          {stages.map((s, i) => (
+            <div key={s} className="flex-1 text-center py-1 rounded-md"
+              style={{ background: i <= 3 ? `${accent}${30 - i * 5}` : `${accent}15` }}>
+              <span className="text-[7px] font-bold text-white/60 uppercase tracking-wide">{s}</span>
+            </div>
+          ))}
+        </div>
+        <div className="space-y-2">
+          {leads.map((d, i) => (
+            <motion.div
+              key={d.name}
+              initial={{ opacity: 0, x: -12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 + i * 0.08 }}
+              className="rounded-xl px-3 py-2.5 flex items-center gap-3 border border-white/6"
+              style={{ background: `${accent}12` }}
+            >
+              <div className="w-7 h-7 rounded-lg flex items-center justify-center text-[9px] font-black text-white shrink-0"
+                style={{ background: accent }}>
+                {d.avatar}
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-[10px] font-bold text-white/80 truncate">{d.name}</p>
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  <span className="text-[7px] text-white/40">{d.kw}</span>
+                  <span className="text-[7px] text-white/20">·</span>
+                  <span className="text-[7px]" style={{ color: accent }}>{d.stage}</span>
+                </div>
+                <div className="flex items-center gap-1.5 mt-1">
+                  <div className="flex-1 h-1 rounded-full bg-white/8 overflow-hidden">
+                    <div className="h-full rounded-full" style={{ width: `${d.prob}%`, background: accent }} />
+                  </div>
+                  <span className="text-[7px] text-white/30">{d.prob}%</span>
+                </div>
+              </div>
+              <span className="text-[11px] font-black text-white shrink-0">{d.value}</span>
+            </motion.div>
+          ))}
+        </div>
+        <div className="mt-3 flex items-center justify-between px-1">
+          <span className="text-[8px] text-white/25">4 active leads</span>
+          <span className="text-[8px] font-bold" style={{ color: accent }}>173.4 kW pipeline</span>
+        </div>
+      </div>
+    </BrowserFrame>
+  );
+}
+
+function SolarDashboardMockup({ accent }: { accent: string }) {
+  const bars = [18, 24, 32, 28, 41, 37, 52, 48];
+  const metrics = [
+    { label: "Installs (MTD)", value: "48",      delta: "+12%" },
+    { label: "kW Deployed",    value: "312 kW",  delta: "+18%" },
+    { label: "CSAT Score",     value: "4.8 ★",  delta: "+0.3" },
+  ];
+  const recent = [
+    { name: "Sharma Residence", kw: "5.4 kW", status: "Commissioned",  avatar: "SR" },
+    { name: "Delhi TechPark",   kw: "40 kW",  status: "Final Inspect", avatar: "DT" },
+    { name: "Patil Farmhouse",  kw: "8 kW",   status: "Installing",    avatar: "PF" },
+  ];
+  return (
+    <BrowserFrame>
+      <div className="bg-[#0f1729] p-4 min-h-80">
+        <div className="flex items-center justify-between mb-4">
+          <span className="text-[11px] font-bold text-white/70">Solar CRM — Operations</span>
+          <span className="text-[8px] text-white/30 bg-white/5 border border-white/8 rounded-md px-2 py-0.5">Q1 2026</span>
+        </div>
+        <div className="grid grid-cols-3 gap-2 mb-4">
+          {metrics.map((m) => (
+            <div key={m.label} className="rounded-xl p-2.5 border border-white/6" style={{ background: `${accent}15` }}>
+              <p className="text-sm font-black text-white">{m.value}</p>
+              <p className="text-[8px] text-white/40 mt-0.5">{m.label}</p>
+              <span className="text-[7px] font-bold text-emerald-400">{m.delta}</span>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-xl border border-white/6 p-3 mb-3" style={{ background: `${accent}08` }}>
+          <p className="text-[8px] text-white/40 font-semibold mb-2 uppercase tracking-wider">Monthly Installs</p>
+          <div className="flex items-end gap-1.5 h-14">
+            {bars.map((h, i) => (
+              <motion.div
+                key={i}
+                className="flex-1 rounded-t-sm"
+                style={{ background: `${accent}${i === 7 ? "ff" : "60"}` }}
+                initial={{ height: 0 }}
+                animate={{ height: `${h}%` }}
+                transition={{ delay: 0.3 + i * 0.06, duration: 0.5, ease: "easeOut" }}
+              />
+            ))}
+          </div>
+          <div className="flex gap-1.5 mt-1">
+            {["Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan"].map((d, i) => (
+              <span key={i} className="flex-1 text-center text-[7px] text-white/20">{d}</span>
+            ))}
+          </div>
+        </div>
+        <div className="space-y-1.5">
+          {recent.map((r) => (
+            <div key={r.name} className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 border border-white/5"
+              style={{ background: `${accent}10` }}>
+              <div className="w-5 h-5 rounded-md flex items-center justify-center text-[8px] font-black text-white shrink-0"
+                style={{ background: accent }}>
+                {r.avatar}
+              </div>
+              <span className="text-[9px] font-semibold text-white/70 flex-1 truncate">{r.name}</span>
+              <span className="text-[8px] text-white/40">{r.kw}</span>
+              <span className="text-[7px] px-1.5 py-0.5 rounded-full font-bold"
+                style={{ background: `${accent}25`, color: accent }}>{r.status}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </BrowserFrame>
+  );
+}
+
+function SolarScheduleMockup({ accent }: { accent: string }) {
+  const jobs = [
+    { site: "Sharma Residence",  kw: "5.4 kW",  time: "9:00 AM",  crew: "Rajan + 2",  status: "In Progress", done: false, avatar: "SR" },
+    { site: "Delhi TechPark",    kw: "40 kW",   time: "1:00 PM",  crew: "Amit + 3",   status: "En Route",    done: false, avatar: "DT" },
+    { site: "Wadia Complex",     kw: "12 kW",   time: "4:00 PM",  crew: "Sunil + 1",  status: "Scheduled",   done: false, avatar: "WC" },
+    { site: "Patil Farmhouse",   kw: "8 kW",    time: "8:00 AM",  crew: "Rajan + 1",  status: "Completed",   done: true,  avatar: "PF" },
+  ];
+  const statusColor: Record<string, string> = {
+    "In Progress": "#22c55e",
+    "En Route":    accent,
+    "Scheduled":   "#94a3b8",
+    "Completed":   "#334155",
+  };
+  return (
+    <BrowserFrame>
+      <div className="bg-[#0f1729] p-4 min-h-80">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <span className="text-[11px] font-bold text-white/70">Field Schedule — Today</span>
+            <div className="flex items-center gap-2 mt-0.5">
+              <span className="text-[8px] px-1.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 font-bold">2 Active</span>
+              <span className="text-[8px] px-1.5 py-0.5 rounded-full bg-white/8 text-white/30 font-bold">4 Jobs</span>
+            </div>
+          </div>
+          <div className="flex -space-x-1.5">
+            {["R","A","S"].map((l, i) => (
+              <div key={i} className="w-5 h-5 rounded-full border border-[#0f1729] flex items-center justify-center text-[7px] font-black text-white"
+                style={{ background: accent, opacity: 1 - i * 0.2 }}>{l}</div>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-2 mb-3">
+          {jobs.map((j, i) => (
+            <motion.div
+              key={j.site}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.15 + i * 0.08 }}
+              className={`rounded-xl px-3 py-2.5 flex items-center gap-3 border ${j.done ? "border-white/3 opacity-40" : "border-white/6"}`}
+              style={{ background: j.done ? "rgba(255,255,255,0.03)" : `${accent}10` }}
+            >
+              <div className="w-7 h-7 rounded-lg flex items-center justify-center text-[8px] font-black text-white shrink-0"
+                style={{ background: j.done ? "#334155" : accent }}>{j.avatar}</div>
+              <div className="flex-1 min-w-0">
+                <p className={`text-[10px] font-bold truncate ${j.done ? "text-white/30 line-through" : "text-white/80"}`}>{j.site}</p>
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  <span className="text-[7px] text-white/30">{j.time}</span>
+                  <span className="text-[7px] text-white/20">·</span>
+                  <span className="text-[7px] text-white/40">{j.kw}</span>
+                  <span className="text-[7px] text-white/20">·</span>
+                  <span className="text-[7px] text-white/40">{j.crew}</span>
+                </div>
+              </div>
+              <span className="text-[7px] px-1.5 py-0.5 rounded-full font-bold shrink-0"
+                style={{ background: `${statusColor[j.status]}20`, color: statusColor[j.status] }}>
+                {j.status}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border border-white/6 px-3 py-2 flex items-center justify-between"
+          style={{ background: `${accent}08` }}>
+          <span className="text-[8px] text-white/30">Next: Wadia Complex · 4:00 PM</span>
+          <span className="text-[8px] font-bold" style={{ color: accent }}>Route optimised ✓</span>
+        </div>
+      </div>
+    </BrowserFrame>
+  );
+}
+
 function VisualMockup({ type, accent }: { type: string; accent: string }) {
   switch (type) {
-    case "kanban":   return <KanbanMockup   accent={accent} />;
-    case "pipeline": return <PipelineMockup accent={accent} />;
-    case "chart":    return <ChartMockup    accent={accent} />;
-    default:         return <DashboardMockup accent={accent} />;
+    case "kanban":           return <KanbanMockup           accent={accent} />;
+    case "pipeline":         return <PipelineMockup         accent={accent} />;
+    case "chart":            return <ChartMockup            accent={accent} />;
+    case "solar-pipeline":   return <SolarCRMPipelineMockup accent={accent} />;
+    case "solar-dashboard":  return <SolarDashboardMockup   accent={accent} />;
+    case "solar-schedule":   return <SolarScheduleMockup    accent={accent} />;
+    default:                 return <DashboardMockup        accent={accent} />;
   }
 }
 
@@ -303,8 +526,8 @@ function FeatureSection({ section, accentColor, isLast }: {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   return (
-    <section ref={ref} className={`relative py-24 overflow-hidden ${isLast ? "bg-[#060b18]" : "bg-[#080d1a]"}`}>
-      <GlowOrb color={`${accentColor}08`}
+    <section ref={ref} className={`relative py-24 overflow-hidden ${isLast ? "bg-slate-50" : "bg-white"}`}>
+      <GlowOrb color={`${accentColor}06`}
         className={`w-150 h-150 -top-40 ${section.flip ? "-right-40" : "-left-40"}`} />
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
@@ -314,13 +537,13 @@ function FeatureSection({ section, accentColor, isLast }: {
           transition={{ duration: 0.55 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 mb-4">
-            <span className="text-[9px] font-black uppercase tracking-[0.25em] text-white/40">{section.eyebrow}</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 mb-4">
+            <span className="text-[9px] font-black uppercase tracking-[0.25em] text-slate-400">{section.eyebrow}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.08] whitespace-pre-line">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.08] whitespace-pre-line">
             {section.heading}
           </h2>
-          <p className="mt-4 text-slate-400 max-w-xl mx-auto text-base">{section.sub}</p>
+          <p className="mt-4 text-slate-500 max-w-xl mx-auto text-base">{section.sub}</p>
         </motion.div>
         {/* Content */}
         <div className={`flex flex-col ${section.flip ? "lg:flex-row-reverse" : "lg:flex-row"} gap-16 items-center`}>
@@ -332,7 +555,7 @@ function FeatureSection({ section, accentColor, isLast }: {
           >
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl blur-2xl scale-95 -z-10"
-                style={{ background: `${accentColor}25` }} />
+                style={{ background: `${accentColor}15` }} />
               <VisualMockup type={section.visual} accent={accentColor} />
             </div>
           </motion.div>
@@ -343,23 +566,23 @@ function FeatureSection({ section, accentColor, isLast }: {
                 initial={{ opacity: 0, x: section.flip ? -24 : 24 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.45, delay: 0.2 + fi * 0.08 }}
-                className="group flex gap-4 p-4 rounded-2xl border border-white/5 hover:border-white/12 bg-white/3 hover:bg-white/5 transition-all duration-200"
+                className="group flex gap-4 p-4 rounded-2xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 shadow-sm hover:shadow-md transition-all duration-200"
               >
                 <div className="mt-0.5 w-8 h-8 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ background: `${accentColor}25` }}>
+                  style={{ background: `${accentColor}15` }}>
                   <CheckCircle2 className="h-4 w-4" style={{ color: accentColor }} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white mb-1">
+                  <h4 className="text-sm font-bold text-slate-900 mb-1">
                     {f.title}
                     {f.badge && (
                       <span className="ml-2 text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full"
-                        style={{ background: `${accentColor}30`, color: accentColor }}>
+                        style={{ background: `${accentColor}15`, color: accentColor }}>
                         {f.badge}
                       </span>
                     )}
                   </h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">{f.desc}</p>
+                  <p className="text-sm text-slate-500 leading-relaxed">{f.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -379,10 +602,10 @@ export function ProductDetail({ product }: { product: ProductData }) {
   const { scrollYProgress } = useScroll();
   const headerOpacity = useTransform(scrollYProgress, [0, 0.06], [0, 1]);
   const [activeTab, setActiveTab] = useState(0);
-  const DEMO_TABS = ["Overview", "Project Mgmt", "Agile", "Views"];
+  const DEMO_TABS = product.demoTabs ?? ["Overview", "Project Mgmt", "Agile", "Views"];
 
   return (
-    <div className="overflow-x-hidden bg-[#080d1a]">
+    <div className="overflow-x-hidden bg-white">
 
       {/* Scroll progress bar */}
       <motion.div
@@ -393,11 +616,11 @@ export function ProductDetail({ product }: { product: ProductData }) {
       {/* Floating nav hint */}
       <motion.div
         style={{ opacity: headerOpacity }}
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-40 hidden lg:flex items-center gap-2 rounded-full bg-[#0f1729]/90 border border-white/10 px-4 py-2 backdrop-blur-xl shadow-xl"
+        className="fixed top-4 left-1/2 -translate-x-1/2 z-40 hidden lg:flex items-center gap-2 rounded-full bg-white/90 border border-slate-200 px-4 py-2 backdrop-blur-xl shadow-lg"
       >
         <div className="w-4 h-4 rounded-md" style={{ background: product.accentColor }} />
-        <span className="text-xs font-bold text-white/80">{product.sub} {product.name}</span>
-        <span className="text-white/20 mx-1">·</span>
+        <span className="text-xs font-bold text-slate-700">{product.sub} {product.name}</span>
+        <span className="text-slate-300 mx-1">·</span>
         <Link href="/signup" className="text-xs font-bold px-3 py-1 rounded-full text-white"
           style={{ background: product.accentColor }}>
           Try free →
@@ -405,11 +628,11 @@ export function ProductDetail({ product }: { product: ProductData }) {
       </motion.div>
 
       {/* ══ HERO ══════════════════════════════════════════════════════ */}
-      <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-0">
-        <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] bg-size-[32px_32px] opacity-30" />
-        <GlowOrb color={`${product.accentColor}20`} className="w-200 h-200 -top-60 left-1/2 -translate-x-1/2" />
-        <GlowOrb color={`${product.accentColor}10`} className="w-100 h-100 bottom-0 left-0" />
-        <GlowOrb color="#8b5cf620" className="w-75 h-75 top-1/2 right-0" />
+      <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-0 bg-gradient-to-br from-white via-slate-50 to-orange-50/30">
+        <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] bg-size-[32px_32px] opacity-60" />
+        <GlowOrb color={`${product.accentColor}12`} className="w-200 h-200 -top-60 left-1/2 -translate-x-1/2" />
+        <GlowOrb color={`${product.accentColor}08`} className="w-100 h-100 bottom-0 left-0" />
+        <GlowOrb color="#8b5cf610" className="w-75 h-75 top-1/2 right-0" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           {/* Breadcrumb */}
@@ -417,13 +640,13 @@ export function ProductDetail({ product }: { product: ProductData }) {
             initial={{ opacity: 0, y: -6 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
-            className="flex items-center gap-1.5 text-xs text-white/30 mb-10"
+            className="flex items-center gap-1.5 text-xs text-slate-400 mb-10"
           >
-            <Link href="/" className="hover:text-white/70 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-slate-700 transition-colors">Home</Link>
             <ChevronRight className="h-3 w-3" />
-            <Link href="/products" className="hover:text-white/70 transition-colors">Products</Link>
+            <Link href="/products" className="hover:text-slate-700 transition-colors">Products</Link>
             <ChevronRight className="h-3 w-3" />
-            <span className="text-white/60 font-semibold">{product.name}</span>
+            <span className="text-slate-600 font-semibold">{product.name}</span>
           </motion.div>
 
           <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -450,7 +673,7 @@ export function ProductDetail({ product }: { product: ProductData }) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.65, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.04] mb-5"
+                className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.04] mb-5"
               >
                 {product.heroHeading.split("\n").map((line, i) => (
                   i === 2
@@ -467,7 +690,7 @@ export function ProductDetail({ product }: { product: ProductData }) {
                 initial={{ opacity: 0, y: 14 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.15 }}
-                className="text-lg text-slate-400 leading-relaxed mb-9 max-w-lg"
+                className="text-lg text-slate-600 leading-relaxed mb-9 max-w-lg"
               >
                 {product.heroParagraph}
               </motion.p>
@@ -490,7 +713,7 @@ export function ProductDetail({ product }: { product: ProductData }) {
                   Get Started Free
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
-                <button className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white/70 border border-white/12 hover:border-white/25 hover:text-white hover:bg-white/5 transition-all duration-200">
+                <button className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-slate-600 border border-slate-300 hover:border-slate-400 hover:text-slate-800 hover:bg-slate-50 transition-all duration-200">
                   <Play className="h-4 w-4" fill="currentColor" /> Watch demo
                 </button>
               </motion.div>
@@ -508,19 +731,19 @@ export function ProductDetail({ product }: { product: ProductData }) {
                       <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <span className="text-xs text-white/50">
-                    <strong className="text-white/80 font-bold">4.8</strong>/5 · 2,000+ reviews
+                  <span className="text-xs text-slate-500">
+                    <strong className="text-slate-700 font-bold">4.8</strong>/5 · 2,000+ reviews
                   </span>
                 </div>
-                <div className="w-px h-4 bg-white/10" />
+                <div className="w-px h-4 bg-slate-200" />
                 <div className="flex items-center gap-1.5">
-                  <Shield className="h-3.5 w-3.5 text-emerald-400" />
-                  <span className="text-xs text-white/50">SOC 2 · GDPR</span>
+                  <Shield className="h-3.5 w-3.5 text-emerald-500" />
+                  <span className="text-xs text-slate-500">SOC 2 · GDPR</span>
                 </div>
-                <div className="w-px h-4 bg-white/10" />
+                <div className="w-px h-4 bg-slate-200" />
                 <div className="flex items-center gap-1.5">
-                  <Lock className="h-3.5 w-3.5 text-white/30" />
-                  <span className="text-xs text-white/50">No card required</span>
+                  <Lock className="h-3.5 w-3.5 text-slate-400" />
+                  <span className="text-xs text-slate-500">No card required</span>
                 </div>
               </motion.div>
             </div>
@@ -540,55 +763,55 @@ export function ProductDetail({ product }: { product: ProductData }) {
 
               {/* Floating badge — top left */}
               <FloatingBadge delay={0.55} className="-top-4 -left-4">
-                <div className="flex items-center gap-2 rounded-xl bg-[#0f1729]/90 border border-white/10 px-3.5 py-2.5 shadow-2xl backdrop-blur-xl">
-                  <div className="w-6 h-6 rounded-lg bg-emerald-500/20 flex items-center justify-center">
-                    <TrendingUp className="h-3.5 w-3.5 text-emerald-400" />
+                <div className="flex items-center gap-2 rounded-xl bg-white border border-slate-200 px-3.5 py-2.5 shadow-lg">
+                  <div className="w-6 h-6 rounded-lg bg-emerald-100 flex items-center justify-center">
+                    <TrendingUp className="h-3.5 w-3.5 text-emerald-600" />
                   </div>
                   <div>
-                    <p className="text-[9px] text-white/40 leading-none">This week</p>
-                    <p className="text-xs font-black text-white">{product.stats[0]?.value}</p>
+                    <p className="text-[9px] text-slate-400 leading-none">This week</p>
+                    <p className="text-xs font-black text-slate-800">{product.stats[0]?.value}</p>
                   </div>
                 </div>
               </FloatingBadge>
 
               {/* Floating badge — bottom right */}
               <FloatingBadge delay={0.7} className="-bottom-4 -right-4">
-                <div className="flex items-center gap-2 rounded-xl bg-[#0f1729]/90 border border-white/10 px-3.5 py-2.5 shadow-2xl backdrop-blur-xl">
+                <div className="flex items-center gap-2 rounded-xl bg-white border border-slate-200 px-3.5 py-2.5 shadow-lg">
                   <div className="flex -space-x-1.5">
                     {["K","M","A"].map((l, i) => (
-                      <div key={i} className="w-6 h-6 rounded-full border-2 border-[#0f1729] flex items-center justify-center text-[8px] font-black text-white"
+                      <div key={i} className="w-6 h-6 rounded-full border-2 border-white flex items-center justify-center text-[8px] font-black text-white"
                         style={{ background: product.accentColor, opacity: 1 - i * 0.2 }}>
                         {l}
                       </div>
                     ))}
                   </div>
                   <div>
-                    <p className="text-[9px] text-white/40 leading-none">Teams using it</p>
-                    <p className="text-xs font-black text-white">{product.stats[2]?.value}</p>
+                    <p className="text-[9px] text-slate-400 leading-none">Teams using it</p>
+                    <p className="text-xs font-black text-slate-800">{product.stats[2]?.value}</p>
                   </div>
                 </div>
               </FloatingBadge>
 
               {/* Floating badge — mid right */}
               <FloatingBadge delay={0.62} className="top-1/2 -translate-y-1/2 -right-6 hidden xl:block">
-                <div className="rounded-xl bg-[#0f1729]/90 border border-white/10 px-3.5 py-2.5 shadow-2xl backdrop-blur-xl">
+                <div className="rounded-xl bg-white border border-slate-200 px-3.5 py-2.5 shadow-lg">
                   <div className="flex items-center gap-1.5 mb-1">
                     <Sparkles className="h-3 w-3" style={{ color: product.accentColor }} />
-                    <span className="text-[9px] font-bold text-white/60">AI powered</span>
+                    <span className="text-[9px] font-bold text-slate-500">AI powered</span>
                   </div>
-                  <p className="text-xs font-black text-white">Auto-assigned</p>
-                  <p className="text-[8px] text-white/30 mt-0.5">3 tasks · just now</p>
+                  <p className="text-xs font-black text-slate-800">Auto-assigned</p>
+                  <p className="text-[8px] text-slate-400 mt-0.5">3 tasks · just now</p>
                 </div>
               </FloatingBadge>
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 inset-x-0 h-32 bg-linear-to-b from-transparent to-[#080d1a] pointer-events-none" />
+        <div className="absolute bottom-0 inset-x-0 h-32 bg-linear-to-b from-transparent to-white pointer-events-none" />
       </section>
 
       {/* ══ STATS STRIP ═══════════════════════════════════════════════ */}
-      <div className="relative bg-[#080d1a] border-y border-white/5">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/5">
+      <div className="relative bg-slate-50 border-y border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
           {product.stats.map((s, i) => (
             <motion.div
               key={s.label}
@@ -606,8 +829,8 @@ export function ProductDetail({ product }: { product: ProductData }) {
       </div>
 
       {/* ══ WHY ENACLE ════════════════════════════════════════════════ */}
-      <section className="relative py-24 bg-[#080d1a] overflow-hidden">
-        <GlowOrb color={`${product.accentColor}06`} className="w-125 h-125 top-0 right-0" />
+      <section className="relative py-24 bg-white overflow-hidden">
+        <GlowOrb color={`${product.accentColor}05`} className="w-125 h-125 top-0 right-0" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -618,9 +841,12 @@ export function ProductDetail({ product }: { product: ProductData }) {
             <p className="text-xs font-black uppercase tracking-[0.25em] mb-3" style={{ color: product.accentColor }}>
               Why teams choose {product.name}
             </p>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-[1.08]">
-              Disconnected apps are<br />
-              <span className="text-white/40">killing productivity</span>
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.08]">
+              {product.painPoints ? (
+                <>The old way of managing<br /><span className="text-slate-400">solar is costing you deals</span></>
+              ) : (
+                <>Disconnected apps are<br /><span className="text-slate-400">killing productivity</span></>
+              )}
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -630,22 +856,22 @@ export function ProductDetail({ product }: { product: ProductData }) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55 }}
-              className="rounded-3xl border border-red-500/15 bg-red-500/5 p-8"
+              className="rounded-3xl border border-red-200 bg-red-50 p-8"
             >
               <div className="flex items-center gap-2 mb-5">
-                <div className="w-8 h-8 rounded-xl bg-red-500/15 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-xl bg-red-100 flex items-center justify-center">
                   <span className="text-lg">😩</span>
                 </div>
-                <p className="text-sm font-black text-red-400 uppercase tracking-widest">Before Enacle</p>
+                <p className="text-sm font-black text-red-500 uppercase tracking-widest">Before Enacle</p>
               </div>
               <ul className="space-y-3">
-                {[
+                {(product.painPoints?.before ?? [
                   "You lose 2+ hours daily switching between 6 tools",
                   "There's no single source of truth across your team",
                   "Manual data entry kills every automation you build",
                   "You've spent 3× more on tools than on people",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-slate-400">
+                ]).map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-slate-600">
                     <span className="text-red-400 mt-0.5 shrink-0 font-bold">✕</span>
                     {item}
                   </li>
@@ -659,17 +885,17 @@ export function ProductDetail({ product }: { product: ProductData }) {
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: 0.1 }}
               className="rounded-3xl border p-8"
-              style={{ borderColor: `${product.accentColor}30`, background: `${product.accentColor}08` }}
+              style={{ borderColor: `${product.accentColor}40`, background: `${product.accentColor}06` }}
             >
               <div className="flex items-center gap-2 mb-5">
-                <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={{ background: `${product.accentColor}25` }}>
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={{ background: `${product.accentColor}20` }}>
                   <span className="text-lg">🚀</span>
                 </div>
                 <p className="text-sm font-black uppercase tracking-widest" style={{ color: product.accentColor }}>After Enacle</p>
               </div>
               <ul className="space-y-3">
-                {product.valueProps.flatMap((vp) => [vp.title, vp.desc]).slice(0, 4).map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-slate-300">
+                {(product.painPoints?.after ?? product.valueProps.flatMap((vp) => [vp.title, vp.desc]).slice(0, 4)).map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-slate-700">
                     <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" style={{ color: product.accentColor }} />
                     {item}
                   </li>
@@ -968,6 +1194,30 @@ export function ProductDetail({ product }: { product: ProductData }) {
             style={{ color: product.accentColor }}>
             Browse all products <ArrowRight className="h-4 w-4" />
           </Link>
+        </div>
+      </div>
+
+      {/* Solar Landing Page Sections */}
+      <div className="min-h-screen bg-background overflow-x-hidden">
+        <Navbar />
+        <div className="pt-16">
+          <HeroSection />
+          <TrustedBySection />
+          <FeaturesGrid />
+          <DashboardShowcase />
+          <MultiDeviceMockups />
+          <WorkflowSection />
+          <AnalyticsSection />
+          <ModulesGrid />
+          <AutomationSection />
+          <ProjectManagementSection />
+          <BillingSection />
+          <SecuritySection />
+          <TestimonialsSection />
+          <GrowthSection />
+          <PricingSection />
+          <CTASection />
+          <Footer />
         </div>
       </div>
 

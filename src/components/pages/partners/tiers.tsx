@@ -2,15 +2,20 @@
 import { BlurFade } from "@/components/ui/blur-fade";
 import { BorderBeam } from "@/components/ui/border-beam";
 import {
-  Star, Gem,               <BlurFade key={t.title} delay={i * 0.07}>
-                <div className={`rounded-2xl border ${t.border} p-6 h-full relative overflow-hidden hover:scale-[1.02] hover:shadow-md transition-all duration-200`} style={{ background: t.cardBg }}>
-                  <BorderBeam size={200} duration={12} colorFrom="#7B68EE" colorTo="#FD71AF" />
-                  <div className={`w-10 h-10 rounded-xl border ${t.border} flex items-center justify-center mb-4`} style={{ background: t.iconBg }}>
-                    <Icon className="h-5 w-5" style={{ color: t.iconColor }} />
-                  </div>
-  Check, DollarSign, Megaphone, BookOpen,
-  Headphones, BarChart3, Users2, Zap, Globe2,
-  Code2, Briefcase, Building2,
+  Star,
+  Gem,
+  Crown,
+  Check,
+  DollarSign,
+  Megaphone,
+  BookOpen,
+  Headphones,
+  BarChart3,
+  Users2,
+  Globe2,
+  Code2,
+  Briefcase,
+  Building2,
 } from "lucide-react";
 
 /* ─── Partner tiers ──────────────────────────────────────── */
@@ -95,25 +100,37 @@ const TYPES = [
     icon: Briefcase,
     title: "Reseller",
     body: "Sell Enacle licences to your clients and earn recurring commission on every seat — month after month.",
-    iconColor: "#7B68EE", iconBg: "rgba(123,104,238,0.1)", border: "border-violet-200 dark:border-violet-800", cardBg: "rgba(123,104,238,0.05)",
+    iconColor: "#7B68EE",
+    iconBg: "rgba(123,104,238,0.1)",
+    border: "border-violet-200 dark:border-violet-800",
+    cardBg: "rgba(123,104,238,0.05)",
   },
   {
     icon: Code2,
     title: "Technology / ISV",
     body: "Build a native integration, list on the Enacle marketplace, and co-market to our 50k+ customer base.",
-    iconColor: "#FD71AF", iconBg: "rgba(253,113,175,0.1)", border: "border-pink-200 dark:border-pink-800", cardBg: "rgba(253,113,175,0.05)",
+    iconColor: "#FD71AF",
+    iconBg: "rgba(253,113,175,0.1)",
+    border: "border-pink-200 dark:border-pink-800",
+    cardBg: "rgba(253,113,175,0.05)",
   },
   {
     icon: Building2,
     title: "Consulting / Agency",
     body: "Deliver implementation, migration, and managed services. Get certified and unlock exclusive deal flow.",
-    iconColor: "#10b981", iconBg: "rgba(16,185,129,0.1)", border: "border-emerald-200 dark:border-emerald-800", cardBg: "rgba(16,185,129,0.05)",
+    iconColor: "#10b981",
+    iconBg: "rgba(16,185,129,0.1)",
+    border: "border-emerald-200 dark:border-emerald-800",
+    cardBg: "rgba(16,185,129,0.05)",
   },
   {
     icon: Globe2,
     title: "Referral",
     body: "No selling required — just refer leads via your unique link and earn a one-time referral bonus per closed deal.",
-    iconColor: "#FFC800", iconBg: "rgba(255,200,0,0.1)", border: "border-yellow-200 dark:border-yellow-800", cardBg: "rgba(255,200,0,0.05)",
+    iconColor: "#FFC800",
+    iconBg: "rgba(255,200,0,0.1)",
+    border: "border-yellow-200 dark:border-yellow-800",
+    cardBg: "rgba(255,200,0,0.05)",
   },
 ];
 
@@ -152,10 +169,16 @@ export function PartnersTiers() {
             const Icon = t.icon;
             return (
               <BlurFade key={t.title} delay={i * 0.07}>
-                <div className={`rounded-2xl border ${t.border} ${t.bg} p-6 h-full relative overflow-hidden hover:scale-[1.02] hover:shadow-md transition-all duration-200`}>
+                <div
+                  className={`rounded-2xl border ${t.border} p-6 h-full relative overflow-hidden hover:scale-[1.02] hover:shadow-md transition-all duration-200`}
+                  style={{ background: t.cardBg }}
+                >
                   <BorderBeam size={200} duration={12} colorFrom="#7B68EE" colorTo="#FD71AF" />
-                  <div className={`w-10 h-10 rounded-xl border ${t.border} ${t.bg} flex items-center justify-center mb-4`}>
-                    <Icon className={`h-5 w-5 ${t.color}`} />
+                  <div
+                    className={`w-10 h-10 rounded-xl border ${t.border} flex items-center justify-center mb-4`}
+                    style={{ background: t.iconBg }}
+                  >
+                    <Icon className="h-5 w-5" style={{ color: t.iconColor }} />
                   </div>
                   <h3 className="text-base font-bold text-zinc-900 dark:text-white mb-2">{t.title}</h3>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.body}</p>

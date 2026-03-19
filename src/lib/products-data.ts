@@ -11,7 +11,7 @@ export type ProductSection = {
   heading: string;
   sub: string;
   features: ProductFeature[];
-  visual: "dashboard" | "kanban" | "chat" | "pipeline" | "chart" | "form" | "calendar" | "list" | "grid";
+  visual: "dashboard" | "kanban" | "chat" | "pipeline" | "chart" | "form" | "calendar" | "list" | "grid" | "solar-pipeline" | "solar-dashboard" | "solar-schedule";
   visualBg: string; // tailwind gradient classes
   flip?: boolean;
 };
@@ -38,6 +38,8 @@ export type ProductData = {
   connectsTo: { name: string; color: string }[];
   templates: ProductTemplate[];
   cta: { heading: string; sub: string };
+  painPoints?: { before: string[]; after: string[] };
+  demoTabs?: string[];
 };
 
 export const PRODUCTS_DATA: ProductData[] = [
@@ -145,7 +147,7 @@ export const PRODUCTS_DATA: ProductData[] = [
           { title: "Site survey scheduler",  desc: "Book site surveys with integrated calendar and automated reminder sequences for homeowners." },
           { title: "Proposal generator",     desc: "Generate professional solar proposals with energy savings calculations and financing options." },
         ],
-        visual: "pipeline",
+        visual: "solar-pipeline",
         visualBg: "from-amber-500 to-orange-600",
         flip: false,
       },
@@ -160,9 +162,23 @@ export const PRODUCTS_DATA: ProductData[] = [
           { title: "Commissioning checklist", desc: "Never miss a step with built-in checklists for final inspections and utility interconnection." },
           { title: "Customer portal",         desc: "Give homeowners real-time visibility into their project status and documentation." },
         ],
-        visual: "dashboard",
+        visual: "solar-dashboard",
         visualBg: "from-orange-500 to-red-600",
         flip: true,
+      },
+      {
+        eyebrow: "CREW • ROUTING • JOB CARDS",
+        heading: "Schedule every crew,\nevery install, on time",
+        sub: "Drag-and-drop field scheduling with live crew availability, route optimisation, and instant job cards.",
+        features: [
+          { title: "Live crew availability",  desc: "See which technicians are free, en route, or on-site in real time without picking up the phone.", badge: "Real-time" },
+          { title: "Smart route optimisation", desc: "AI clusters nearby jobs to minimise travel time and maximise the number of sites visited each day." },
+          { title: "Digital job cards",        desc: "Technicians get their daily job list on mobile with site details, checklists, and customer contact." },
+          { title: "ETA notifications",        desc: "Automated SMS keeps homeowners informed with arrival windows so nobody waits around all day." },
+        ],
+        visual: "solar-schedule",
+        visualBg: "from-sky-500 to-cyan-600",
+        flip: false,
       },
     ],
     connectsTo: [
@@ -182,6 +198,21 @@ export const PRODUCTS_DATA: ProductData[] = [
       heading: "Power your solar business\nwith the right CRM",
       sub: "Solar CRM gives you everything you need to convert more leads and deliver flawless installations.",
     },
+    painPoints: {
+      before: [
+        "Leads live in spreadsheets — follow-ups fall through the cracks every week",
+        "Site surveys booked by phone; half never convert to a signed proposal",
+        "Permit status is buried in email threads nobody checks in time",
+        "You find out a job went over budget weeks after commissioning",
+      ],
+      after: [
+        "Solar-specific pipeline tracks every lead from enquiry to commissioning",
+        "Automated follow-ups and proposal tools boost close rate by 3×",
+        "Permits, crews, and checklists tracked in one live real-time dashboard",
+        "Cost-to-complete visibility from first quote to grid connection",
+      ],
+    },
+    demoTabs: ["Lead Pipeline", "Site Survey", "Crew Schedule", "Reports"],
   },
 
   /* ─── CRM ───────────────────────────────────────────────────────────── */

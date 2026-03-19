@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Eye, EyeOff, User } from "lucide-react";
+import { Header } from "@/components/layout/header";
 import { AuthCard } from "@/components/auth/AuthCard";
 import { InputField } from "@/components/auth/InputField";
 import { SocialLoginButton } from "@/components/auth/SocialLoginButton";
@@ -110,12 +111,14 @@ export default function SignupPage() {
   };
 
   return (
-    <div
-      className="min-h-screen w-full flex flex-col items-center justify-center px-4 py-10"
-      style={{
-        background: "linear-gradient(135deg,#f5f3ff 0%,#fdf4ff 35%,#f0f4ff 65%,#ede9fe 100%)",
-      }}
-    >
+    <>
+      <Header />
+      <div
+        className="min-h-screen w-full flex flex-col items-center justify-center px-4 py-10"
+        style={{
+          background: "linear-gradient(135deg,#f5f3ff 0%,#fdf4ff 35%,#f0f4ff 65%,#ede9fe 100%)",
+        }}
+      >
       <div className="w-full max-w-100">
         <EnacleLogo />
 
@@ -214,6 +217,7 @@ export default function SignupPage() {
           <Link href="/contact" className="text-accent-enacle hover:underline">Need help?</Link>
         </p>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

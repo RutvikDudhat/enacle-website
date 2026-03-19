@@ -1,0 +1,177 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Play, TrendingUp, Users, Zap, DollarSign } from "lucide-react";
+
+const DashboardMockup = () => (
+  <div className="w-full rounded-xl overflow-hidden bg-white shadow-2xl border border-border">
+    {/* Title bar */}
+    <div className="flex items-center gap-2 px-4 py-2.5 bg-muted/50 border-b border-border">
+      <div className="flex gap-1.5">
+        <div className="w-3 h-3 rounded-full bg-red-400" />
+        <div className="w-3 h-3 rounded-full bg-yellow-400" />
+        <div className="w-3 h-3 rounded-full bg-green-400" />
+      </div>
+      <div className="flex-1 flex justify-center">
+        <div className="px-12 py-1 rounded-md bg-white text-xs text-muted-foreground border border-border">solarcrm.app/dashboard</div>
+      </div>
+    </div>
+    {/* Dashboard content */}
+    <div className="flex">
+      {/* Sidebar */}
+      <div className="w-48 bg-foreground/[0.03] border-r border-border p-3 hidden md:block">
+        <div className="gradient-bg rounded-lg px-3 py-1.5 text-xs font-bold text-white mb-4">☀️ SolarCRM</div>
+        {["Dashboard", "Leads", "Pipeline", "Projects", "Inventory", "Billing", "Reports"].map((item, i) => (
+          <div key={item} className={`px-3 py-2 rounded-md text-xs mb-1 ${i === 0 ? "bg-primary/10 text-primary font-semibold" : "text-muted-foreground hover:bg-muted"}`}>{item}</div>
+        ))}
+      </div>
+      {/* Main area */}
+      <div className="flex-1 p-4 space-y-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="text-sm font-bold text-foreground">Welcome back, Sarah</div>
+            <div className="text-[10px] text-muted-foreground">Monday, March 18</div>
+          </div>
+          <div className="gradient-bg text-white text-[10px] px-3 py-1.5 rounded-lg font-semibold">+ New Lead</div>
+        </div>
+        {/* Stat cards */}
+        <div className="grid grid-cols-4 gap-2">
+          {[
+            { label: "Total Leads", value: "2,847", change: "+12%", color: "text-primary" },
+            { label: "Revenue", value: "$1.2M", change: "+28%", color: "text-green-500" },
+            { label: "Projects", value: "156", change: "+8%", color: "text-secondary" },
+            { label: "Installs", value: "89", change: "+15%", color: "text-amber-500" },
+          ].map((s) => (
+            <div key={s.label} className="bg-muted/30 rounded-lg p-2.5 border border-border">
+              <div className="text-[9px] text-muted-foreground">{s.label}</div>
+              <div className={`text-sm font-bold ${s.color}`}>{s.value}</div>
+              <div className="text-[9px] text-green-500">{s.change}</div>
+            </div>
+          ))}
+        </div>
+        {/* Chart area */}
+        <div className="bg-muted/20 rounded-lg p-3 border border-border">
+          <div className="text-[10px] font-semibold mb-2">Revenue Overview</div>
+          <div className="flex items-end gap-1.5 h-20">
+            {[40, 65, 45, 80, 55, 90, 70, 95, 60, 85, 75, 100].map((h, i) => (
+              <div key={i} className="flex-1 rounded-t-sm gradient-bg opacity-70 hover:opacity-100 transition-opacity" style={{ height: `${h}%` }} />
+            ))}
+          </div>
+          <div className="flex justify-between mt-1">
+            {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map((m) => (
+              <div key={m} className="text-[7px] text-muted-foreground flex-1 text-center">{m}</div>
+            ))}
+          </div>
+        </div>
+        {/* Table */}
+        <div className="bg-muted/20 rounded-lg border border-border overflow-hidden">
+          <div className="text-[10px] font-semibold p-2.5 border-b border-border">Recent Leads</div>
+          <div className="divide-y divide-border">
+            {[
+              { name: "John Smith", status: "Qualified", value: "$45K", src: "Solar Panel" },
+              { name: "Emily Chen", status: "New", value: "$32K", src: "Referral" },
+              { name: "Mike Johnson", status: "Proposal", value: "$68K", src: "Website" },
+            ].map((r) => (
+              <div key={r.name} className="flex items-center justify-between px-2.5 py-1.5 text-[9px]">
+                <span className="font-medium text-foreground">{r.name}</span>
+                <span className={`px-1.5 py-0.5 rounded text-[8px] font-medium ${r.status === "Qualified" ? "bg-green-100 text-green-700" : r.status === "New" ? "bg-blue-100 text-blue-700" : "bg-amber-100 text-amber-700"}`}>{r.status}</span>
+                <span className="text-muted-foreground">{r.src}</span>
+                <span className="font-semibold text-foreground">{r.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+export default function HeroSection() {
+  const { ref, isVisible } = useScrollAnimation(0.1);
+
+  return (
+    <section ref={ref} className="relative overflow-hidden min-h-screen flex items-center">
+      {/* Background decorations */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-solar-purple/5 blur-3xl -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-solar-pink/5 blur-3xl translate-y-1/2 -translate-x-1/3" />
+
+      <div className="container mx-auto max-w-7xl px-4 md:px-8 py-20 md:py-12 relative z-10">
+        {/* Top badge */}
+        <div className={`flex justify-center mb-8 ${isVisible ? "animate-fade-up" : "opacity-0"}`}>
+          <div className="glass-card px-5 py-2 flex items-center gap-2 text-sm">
+            <Zap className="w-4 h-4 text-solar-purple" />
+            <span className="text-muted-foreground">#1 Solar CRM Platform — Trusted by 2,000+ Companies</span>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Text */}
+          <div className={`space-y-6 ${isVisible ? "animate-fade-up" : "opacity-0"}`}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight">
+              Power Your Solar Business with{" "}
+              <span className="gradient-text">Smart CRM</span>
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
+              The all-in-one platform to manage leads, projects, installations, billing, and analytics — built exclusively for the solar industry.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button size="lg" className="gradient-bg text-white border-0 shadow-lg shadow-solar-purple/25 hover:shadow-xl hover:shadow-solar-purple/30 transition-all hover:scale-105 text-base px-8">
+                Start Free Trial <ArrowRight className="w-5 h-5 ml-1" />
+              </Button>
+              <Button size="lg" variant="outline" className="border-border hover:bg-muted transition-all hover:scale-105 text-base px-8">
+                <Play className="w-4 h-4 mr-2" /> Watch Demo
+              </Button>
+            </div>
+            <div className="flex items-center gap-6 pt-2">
+              <div className="flex -space-x-2">
+                {[...Array(4)].map((_, i) => (
+                  <div key={i} className="w-8 h-8 rounded-full gradient-bg border-2 border-white flex items-center justify-center text-[10px] text-white font-bold" style={{ opacity: 1 - i * 0.15 }}>
+                    {["S", "J", "M", "A"][i]}
+                  </div>
+                ))}
+              </div>
+              <div className="text-sm text-muted-foreground">
+                <span className="font-bold text-foreground">2,000+</span> solar companies trust us
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Dashboard mockup */}
+          <div className={`relative ${isVisible ? "animate-slide-left" : "opacity-0"}`} style={{ animationDelay: "0.2s" }}>
+            {/* Laptop frame */}
+            <div className="relative">
+              <DashboardMockup />
+              {/* Floating cards */}
+              <div className="absolute -left-6 top-1/4 glass-card p-3 animate-float z-20 hidden lg:block">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center"><TrendingUp className="w-4 h-4 text-white" /></div>
+                  <div>
+                    <div className="text-[10px] text-muted-foreground">Revenue</div>
+                    <div className="text-sm font-bold text-foreground">$1.2M</div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -right-4 top-12 glass-card p-3 animate-float-slow z-20 hidden lg:block" style={{ animationDelay: "1s" }}>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center"><Users className="w-4 h-4 text-green-600" /></div>
+                  <div>
+                    <div className="text-[10px] text-muted-foreground">New Leads</div>
+                    <div className="text-sm font-bold text-foreground">+147</div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -bottom-4 left-1/4 glass-card p-3 animate-float z-20 hidden lg:block" style={{ animationDelay: "2s" }}>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center"><DollarSign className="w-4 h-4 text-amber-600" /></div>
+                  <div>
+                    <div className="text-[10px] text-muted-foreground">Installs</div>
+                    <div className="text-sm font-bold text-foreground">89 Active</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
