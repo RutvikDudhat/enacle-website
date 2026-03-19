@@ -11,18 +11,18 @@ const columns = [
   },
   {
     title: "In Progress",
-    color: "bg-solar-light-purple",
+    color: "bg-solar-yellow/20",
     cards: [
-      { title: "Panel Install — Green Acres", tag: "Install", tagColor: "bg-solar-light-purple text-solar-purple", priority: "High" },
+      { title: "Panel Install — Green Acres", tag: "Install", tagColor: "bg-solar-yellow/20 text-solar-orange", priority: "High" },
       { title: "Wiring — SunTech Home", tag: "Electrical", tagColor: "bg-green-100 text-green-700", priority: "Medium" },
-      { title: "Roof Mounting — #1095", tag: "Install", tagColor: "bg-solar-light-purple text-solar-purple", priority: "Low" },
+      { title: "Roof Mounting — #1095", tag: "Install", tagColor: "bg-solar-yellow/20 text-solar-orange", priority: "Low" },
     ],
   },
   {
     title: "Review",
-    color: "bg-solar-light-pink",
+    color: "bg-solar-orange/20",
     cards: [
-      { title: "Inspection — Commercial #987", tag: "QA", tagColor: "bg-solar-light-pink text-solar-pink", priority: "High" },
+      { title: "Inspection — Commercial #987", tag: "QA", tagColor: "bg-solar-orange/20 text-solar-orange", priority: "High" },
     ],
   },
   {

@@ -16,7 +16,7 @@ export default function CTASection() {
           <p className="text-lg text-white/80 mb-8 max-w-xl mx-auto">Join 2,000+ solar companies already growing with SolarCRM. Free 14-day trial — no credit card required.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center max-w-md mx-auto">
             <input type="email" placeholder="Enter your email" className="w-full px-5 py-3 rounded-xl text-foreground bg-white border-0 focus:outline-none focus:ring-2 focus:ring-white/50 text-sm" />
-            <Button size="lg" className="bg-white text-solar-purple hover:bg-white/90 font-bold whitespace-nowrap px-8 rounded-xl">
+            <Button size="lg" className="bg-white text-solar-orange hover:bg-white/90 font-bold whitespace-nowrap px-8 rounded-xl">
               Get Started <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
           </div>

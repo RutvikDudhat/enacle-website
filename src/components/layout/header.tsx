@@ -551,7 +551,7 @@ export function Header({ minimal = false }: { minimal?: boolean }) {
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
+      className={`sticky top-0 z-40 w-full border-b transition-all duration-300 ${
         scrolled
           ? "border-slate-200/80 dark:border-slate-700/60 bg-white/95 dark:bg-[#0a0f1e]/95 backdrop-blur-md shadow-sm"
           : "border-transparent bg-white/90 dark:bg-[#0a0f1e]/90 backdrop-blur-sm"

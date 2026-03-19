@@ -15,7 +15,6 @@ import MultiDeviceMockups from "@/components/landing/MultiDeviceMockups";
 import GrowthSection from "@/components/landing/GrowthSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import SecuritySection from "@/components/landing/SecuritySection";
-import PricingSection from "@/components/landing/PricingSection";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
 
@@ -37,7 +36,6 @@ export default function SolarCRMLanding() {
       <GrowthSection />
       <TestimonialsSection />
       <SecuritySection />
-      <PricingSection />
       <CTASection />
       <Footer />
     </main>

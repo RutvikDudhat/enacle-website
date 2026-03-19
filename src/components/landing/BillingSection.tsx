@@ -70,7 +70,7 @@ export default function BillingSection() {
                 { icon: DollarSign, val: "$12M+", label: "Payments Processed" },
               ].map((s) => (
                 <div key={s.label} className="glass-card p-4 text-center">
-                  <s.icon className="w-6 h-6 mx-auto mb-2 text-solar-purple" />
+                  <s.icon className="w-6 h-6 mx-auto mb-2 text-solar-orange" />
                   <div className="text-2xl font-extrabold gradient-text">{s.val}</div>
                   <div className="text-xs text-muted-foreground">{s.label}</div>
                 </div>

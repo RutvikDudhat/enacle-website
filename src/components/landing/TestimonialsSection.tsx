@@ -23,7 +23,7 @@ export default function TestimonialsSection() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {testimonials.map((t, i) => (
-            <div key={t.name} className={`glass-card p-6 hover:shadow-xl hover:shadow-solar-purple/5 transition-all hover:-translate-y-1 ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: `${i * 0.08}s` }}>
+            <div key={t.name} className={`glass-card p-6 hover:shadow-xl hover:shadow-solar-orange/10 transition-all hover:-translate-y-1 ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: `${i * 0.08}s` }}>
               <div className="flex gap-0.5 mb-3">
                 {[...Array(t.rating)].map((_, j) => (
                   <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />

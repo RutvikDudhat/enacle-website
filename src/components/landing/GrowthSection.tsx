@@ -21,7 +21,7 @@ export default function GrowthSection() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s, i) => (
-            <div key={s.label} className={`text-center p-8 rounded-2xl border border-border bg-card hover:shadow-xl hover:shadow-solar-purple/5 transition-all hover:-translate-y-1 ${isVisible ? "animate-count-up" : "opacity-0"}`} style={{ animationDelay: `${i * 0.15}s` }}>
+            <div key={s.label} className={`relative text-center p-8 rounded-2xl border border-border bg-card hover:shadow-xl hover:shadow-solar-orange/10 transition-all hover:-translate-y-1 ${isVisible ? "animate-count-up" : "opacity-0"}`} style={{ animationDelay: `${i * 0.15}s` }}>
               <div className="w-14 h-14 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-4">
                 <s.icon className="w-7 h-7 text-white" />
               </div>

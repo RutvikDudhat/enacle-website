@@ -5,7 +5,7 @@ export default function DashboardShowcase() {
 
   return (
     <section ref={ref} className="section-padding bg-muted/20 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-solar-purple/5 blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-solar-yellow/5 blur-3xl" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className={`text-center max-w-2xl mx-auto mb-12 ${isVisible ? "animate-fade-up" : "opacity-0"}`}>
           <span className="text-sm font-semibold gradient-text uppercase tracking-widest">Dashboard</span>
@@ -59,7 +59,7 @@ export default function DashboardShowcase() {
                         {[35, 50, 42, 68, 55, 78, 65, 88, 72, 95, 82, 100].map((h, i) => (
                           <div key={i} className="flex-1 flex flex-col gap-0.5 items-stretch">
                             <div className="rounded-t-sm gradient-bg" style={{ height: `${h}%` }} />
-                            <div className="rounded-t-sm bg-solar-pink/30" style={{ height: `${h * 0.6}%` }} />
+                            <div className="rounded-t-sm bg-solar-orange/30" style={{ height: `${h * 0.6}%` }} />
                           </div>
                         ))}
                       </div>
@@ -69,13 +69,13 @@ export default function DashboardShowcase() {
                       <div className="relative w-20 h-20 mx-auto my-2">
                         <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
                           <circle cx="18" cy="18" r="15" fill="none" stroke="hsl(var(--muted))" strokeWidth="3" />
-                          <circle cx="18" cy="18" r="15" fill="none" stroke="#7B68EE" strokeWidth="3" strokeDasharray="40 60" strokeLinecap="round" />
-                          <circle cx="18" cy="18" r="15" fill="none" stroke="#FD71AF" strokeWidth="3" strokeDasharray="25 75" strokeDashoffset="-40" strokeLinecap="round" />
+                          <circle cx="18" cy="18" r="15" fill="none" stroke="#FFC107" strokeWidth="3" strokeDasharray="40 60" strokeLinecap="round" />
+                          <circle cx="18" cy="18" r="15" fill="none" stroke="#FF8C00" strokeWidth="3" strokeDasharray="25 75" strokeDashoffset="-40" strokeLinecap="round" />
                           <circle cx="18" cy="18" r="15" fill="none" stroke="#4ade80" strokeWidth="3" strokeDasharray="20 80" strokeDashoffset="-65" strokeLinecap="round" />
                         </svg>
                       </div>
                       <div className="space-y-1">
-                        {[{ l: "Website", c: "bg-solar-purple", v: "40%" }, { l: "Referral", c: "bg-solar-pink", v: "25%" }, { l: "Direct", c: "bg-green-400", v: "20%" }].map((s) => (
+                        {[{ l: "Website", c: "bg-solar-yellow", v: "40%" }, { l: "Referral", c: "bg-solar-orange", v: "25%" }, { l: "Direct", c: "bg-solar-green", v: "20%" }].map((s) => (
                           <div key={s.l} className="flex items-center gap-1.5 text-[9px]">
                             <div className={`w-2 h-2 rounded-full ${s.c}`} />
                             <span className="text-muted-foreground">{s.l}</span>

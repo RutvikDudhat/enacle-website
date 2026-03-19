@@ -34,7 +34,7 @@ const modules = [
           <div key={p.name} className="bg-white/80 rounded-lg p-1.5 text-[8px]">
             <div className="flex justify-between items-center mb-1">
               <span className="font-medium">{p.name}</span>
-              <span className={`px-1 py-0.5 rounded text-[7px] font-medium ${p.phase === "Done" ? "bg-green-100 text-green-600" : "bg-solar-light-purple text-solar-purple"}`}>{p.phase}</span>
+              <span className={`px-1 py-0.5 rounded text-[7px] font-medium ${p.phase === "Done" ? "bg-green-100 text-green-600" : "bg-solar-yellow/20 text-solar-orange"}`}>{p.phase}</span>
             </div>
             <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden"><div className="h-full gradient-bg rounded-full" style={{ width: `${p.progress}%` }} /></div>
           </div>
@@ -136,7 +136,7 @@ export default function ModulesGrid() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {modules.map((m, i) => (
-            <div key={m.title} className={`group rounded-2xl border border-border bg-card p-5 hover:shadow-xl hover:shadow-solar-purple/5 hover:-translate-y-1 transition-all duration-300 ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: `${i * 0.1}s` }}>
+            <div key={m.title} className={`group rounded-2xl border border-border bg-card p-5 hover:shadow-xl hover:shadow-solar-orange/10 hover:-translate-y-1 transition-all duration-300 ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: `${i * 0.1}s` }}>
               <h3 className="font-bold text-base mb-1">{m.title}</h3>
               <p className="text-xs text-muted-foreground mb-3">{m.desc}</p>
               <div className="rounded-xl bg-muted/40 p-2.5 border border-border">{m.ui}</div>

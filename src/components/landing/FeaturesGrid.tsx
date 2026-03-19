@@ -25,7 +25,7 @@ export default function FeaturesGrid() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {features.map((f, i) => (
-            <div key={f.title} className={`group relative p-6 rounded-2xl border border-border bg-card hover:shadow-xl hover:shadow-solar-purple/5 hover:-translate-y-1 transition-all duration-300 ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: `${i * 0.08}s` }}>
+            <div key={f.title} className={`group relative p-6 rounded-2xl border border-border bg-card hover:shadow-xl hover:shadow-solar-orange/10 hover:-translate-y-1 transition-all duration-300 ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: `${i * 0.08}s` }}>
               <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <f.icon className="w-6 h-6 text-white" />
               </div>

@@ -2,10 +2,10 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Zap, Mail, Bell, Brain, ArrowDown } from "lucide-react";
 
 const automations = [
-  { icon: Zap, label: "New Lead Captured", detail: "Website form submitted", color: "bg-solar-purple" },
-  { icon: Brain, label: "AI Lead Scoring", detail: "Score: 92/100 — Hot Lead", color: "bg-solar-pink" },
-  { icon: Mail, label: "Auto Email Sent", detail: "Welcome + proposal template", color: "bg-blue-500" },
-  { icon: Bell, label: "Team Notified", detail: "Sales rep assigned automatically", color: "bg-green-500" },
+  { icon: Zap, label: "New Lead Captured", detail: "Website form submitted", color: "bg-solar-yellow" },
+  { icon: Brain, label: "AI Lead Scoring", detail: "Score: 92/100 — Hot Lead", color: "bg-solar-orange" },
+  { icon: Mail, label: "Auto Email Sent", detail: "Welcome + proposal template", color: "bg-solar-blue" },
+  { icon: Bell, label: "Team Notified", detail: "Sales rep assigned automatically", color: "bg-solar-green" },
 ];
 
 export default function AutomationSection() {
@@ -13,7 +13,7 @@ export default function AutomationSection() {
 
   return (
     <section ref={ref} className="section-padding relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-solar-pink/5 blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-solar-orange/5 blur-3xl" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className={`${isVisible ? "animate-fade-up" : "opacity-0"}`}>
@@ -55,7 +55,7 @@ export default function AutomationSection() {
                   </div>
                   {i < automations.length - 1 && (
                     <div className="flex justify-center py-1">
-                      <ArrowDown className="w-4 h-4 text-solar-purple/40" />
+                      <ArrowDown className="w-4 h-4 text-solar-orange/40" />
                     </div>
                   )}
                 </div>

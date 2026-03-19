@@ -81,7 +81,7 @@ export default function MultiDeviceMockups() {
 
   return (
     <section ref={ref} className="section-padding relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-solar-purple/3 via-transparent to-solar-pink/3" />
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-solar-yellow/5 via-transparent to-solar-orange/5" />
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className={`text-center max-w-2xl mx-auto mb-16 ${isVisible ? "animate-fade-up" : "opacity-0"}`}>
           <span className="text-sm font-semibold gradient-text uppercase tracking-widest">Multi-Platform</span>

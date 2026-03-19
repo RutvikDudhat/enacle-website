@@ -1,38 +1,55 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+"use client";
 
-const links = ["Features", "Modules", "Pricing", "Testimonials"];
+import { useState } from "react";
+import { ChevronDown, Sun } from "lucide-react";
+
+const navLinks = [
+  { label: "Solutions", hasDropdown: true },
+  { label: "Verticals", hasDropdown: true },
+  { label: "Infrastructure", hasDropdown: true },
+  { label: "Resources", hasDropdown: true },
+  { label: "Pricing", hasDropdown: false },
+  { label: "Contact us", hasDropdown: false },
+];
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
-      <div className="container mx-auto max-w-7xl px-4 md:px-8 flex items-center justify-between h-16">
-        <div className="flex items-center gap-2 font-extrabold text-lg">
-          <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center text-white text-sm">☀️</div>
-          <span>Solar<span className="gradient-text">CRM</span></span>
+    <nav className="sticky top-0 z-50 bg-gradient-to-r from-blue-50 to-sky-50 border-b border-blue-100">
+      <div className="container mx-auto max-w-7xl px-4 md:px-8 flex items-center justify-between h-14">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center text-white">
+            <Sun className="w-5 h-5" />
+          </div>
+          <span className="text-lg font-bold text-solar-blue">Solar<span className="text-solar-orange">CRM</span></span>
         </div>
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
-            <a key={l} href={`#${l.toLowerCase()}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium">{l}</a>
+
+        {/* Navigation Links */}
+        <div className="hidden md:flex items-center gap-1">
+          {navLinks.map((link) => (
+            <button
+              key={link.label}
+              className="flex items-center gap-0.5 px-3 py-2 text-sm text-slate-600 hover:text-solar-blue hover:bg-white/50 rounded-md transition-all"
+              onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.label)}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              {link.label}
+              {link.hasDropdown && (
+                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === link.label ? "rotate-180" : ""}`} />
+              )}
+            </button>
           ))}
         </div>
-        <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm">Sign In</Button>
-          <Button size="sm" className="gradient-bg text-white border-0 shadow-md shadow-solar-purple/20">Start Free Trial</Button>
-        </div>
-        <button className="md:hidden" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
+
+        {/* Mobile Menu Button */}
+        <button className="md:hidden p-2 text-slate-600">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
-      {open && (
-        <div className="md:hidden glass border-t border-white/10 p-4 space-y-3">
-          {links.map((l) => (
-            <a key={l} href={`#${l.toLowerCase()}`} className="block text-sm text-muted-foreground py-2" onClick={() => setOpen(false)}>{l}</a>
-          ))}
-          <Button className="w-full gradient-bg text-white border-0">Start Free Trial</Button>
-        </div>
-      )}
     </nav>
   );
 }
